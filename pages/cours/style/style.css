@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/* Partie supérieur de la page*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box ;
+    
+}
+
+body{
+    background:#f9f9f9;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+header{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index:100;
+}
+
+.logo{
+    font-size:2rem;
+    color:rgb(211, 123, 22);
+    pointer-events: none;
+
+}
+
+header img {
+    float: left;
+    margin: 1rem 1rem;
+    width: 100px;
+    height: auto;
+  }
+.navigation a{
+    text-decoration: none;
+    color:rgb(211, 123, 22);
+    padding: 6px 15px;
+    border-radius: 20px;
+    margin:0 10px;
+    font-weight: 600;
+    
+}
+
+.navigation a:hover, .navigation a.active{
+    background:rgb(211, 123, 22);
+    color:#ffff;
+}
+
+.parallax{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color:#120f14;
+    background: linear-gradient(0deg, #120f14 50%,  rgba(94,10,10,1) 60%);
+}
+
+#text{
+    position: absolute;
+    font-size: 5rem;
+    color:rgb(211, 123, 22);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+}
+
+.parallax img{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+}
+

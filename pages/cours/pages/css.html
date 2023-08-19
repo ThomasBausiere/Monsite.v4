@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>CSS</title>
+</head>
+<body>
+    <header>
+        <a href="../../../../index.html"><div class="logo"><img src="../logo.png" alt="logo_du_site"></div></a>
+        <nav class="navigation">
+            <a href="../pages/html.html" >HTML</a>
+            <a href="../pages/css.html" class="active">CSS</a>
+            <a href="../pages/js.html">JavaScript</a>
+            <a href="../pages/php.html">PHP</a>
+            <a href="../pages/react.html">React</a>
+            <a href="../pages/git.html">Git&Github</a>
+
+            <a href="../../index.html">retour</a>
+        </nav>  
+    </header>
+        
+        <div class="sommaire">
+            <h1>Cours de Css</h1>
+            <a href="#0">Cours de CSS</a><br>
+            <a href="#1">Partie 1: Introduction au CSS</a><br>
+            <a href="#1.1">1.1. Qu'est-ce que CSS?</a><br>
+            <a href="#1.2">1.2. Comment fonctionne CSS?</a><br>
+            <a href="#1.3">1.3. Inclusion de CSS dans HTML (Inline, Interne, Externe)</a><br>
+            <a href="#1.4">1.4. Syntaxe CSS</a><br>
+
+            <a href="#2">Partie 2: Sélecteurs et propriétés CSS</a><br>
+            <a href="#2.1">2.1. Sélecteurs CSS (Type, Classe, ID, Attribut, Pseudo-classes, Pseudo-éléments)</a><br>
+            <a href="#2.2">2.2. Propriétés et valeurs CSS (Couleur, Taille, Marge, Rembourrage, Bordure)</a><br>
+
+
+            <a href="#3">Partie 3: Mise en forme de texte et de fond</a><br>
+            <a href="#3.1">3.1. Propriétés de texte</a><br>
+            <a href="#3.2">3.2. Propriétés de fond</a><br>
+
+
+            <a href="#4">Partie 4: Boîte de modèle CSS (CSS Box Model)</a><br>
+            <a href="#4.1">4.1. Comprendre le modèle de boîte CSS</a><br>
+            <a href="#4.2">4.2. Propriétés de la boîte (Margin, Border, Padding, Content)</a><br>
+
+            <a href="#5">Partie 5: Mise en page CSS</a><br>
+            <a href="#5.1">5.1. Positionnement CSS (Static, Relative, Absolute, Fixed, Sticky)</a><br>
+            <a href="#5.2">5.2. Affichage CSS et propriétés de visibilité</a><br>
+            <a href="#5.3">5.3. Flexbox</a><br>
+            <a href="#5.4">5.4. CSS Grid</a><br>
+
+            <a href="#6">Partie 6: Animation et transformation CSS</a><br>
+            <a href="#6.1">6.1. Transitions CSS</a><br>
+            <a href="#6.2">6.2. Animations CSS</a><br>
+            <a href="#6.3">6.3. Transformations CSS</a><br>
+
+            <a href="#7">Partie 7: Préprocesseurs CSS</a><br>
+            <a href="#7.1">7.1. Introduction aux préprocesseurs CSS (SASS, LESS)</a><br>
+            <a href="#7.2">7.2. Utiliser les variables et les fonctions dans les préprocesseurs</a><br>
+
+            <a href="#8">Partie 8: Frameworks CSS et méthodologies</a><br>
+            <a href="#8.1">8.1. Introduction à Bootstrap, Tailwind CSS</a><br>
+            <a href="#8.2">8.2. Introduction à la méthodologie BEM, OOCSS, SMACSS</a><br>
+
+            <a href="#9">Partie 9: CSS Responsive Design</a><br>
+            <a href="#9.1">9.1. Introduction au Responsive Design</a><br>
+            <a href="#9.2">9.2. Media Queries</a><br>
+            <a href="#9.3">9.3. Approches mobile-first vs desktop-first</a><br>
+
+            <a href="#10">Partie 10: Astuces et bonnes pratiques CSS</a><br>
+            <a href="#10.1">10.1. Conseils pour écrire du CSS propre et efficace</a><br>
+            <a href="#10.2">10.2. Outils de débogage CSS</a><br>
+            <a href="#10.3">10.3. Résolution de problèmes courants</a><br>
+            <a href="#10.4">10.4. Performance CSS</a><br>
+
+
+
+            
+
+        </div>
+    
+<div class="cours">
+<h1 id="0">Cours de CSS</h1>
+<!-- Partie 1: Introduction au CSS -->
+<h2 id="2">Partie 1: Introduction au CSS</h2>
+    <h3 id="1.1">1.1. Qu'est-ce que CSS?</h3>
+        <p>CSS, ou Cascading Style Sheets (feuilles de style en cascade), est un langage de style utilisé pour décrire l'apparence et la mise en forme d'un document écrit en HTML. CSS gère le design et améliore l'apparence des pages web en leur ajoutant des styles, des couleurs, des espacements et des mises en page.</p>
+        <p>Le CSS est appelé "en cascade" parce qu'il applique des styles en suivant une sorte de hiérarchie ou de cascade. Si plusieurs règles de style sont applicables à un même élément, la règle "la plus spécifique" ou "la dernière définie" est celle qui sera appliquée.</p>
+    <h3 id="1.2">1.2. Comment fonctionne CSS?</h3>
+        <p>CSS fonctionne en associant des règles de style à des éléments HTML. Ces règles sont constituées de sélecteurs (qui sélectionnent les éléments HTML auxquels appliquer les styles) et de déclarations (qui définissent ce que ces styles devraient être).</p>
+        <div class="exemple">
+            <p class="code">
+                h1 {<br>
+                    color: red;<br>
+                }<br>
+            </p>
+        </div>
+        <p>Ici, h1 est le sélecteur et color: red; est la déclaration. La déclaration est composée de deux parties : la propriété (color) et la valeur (red).</p>
+    <h3 id="1.3">1.3. Inclusion de CSS dans HTML (Inline, Interne, Externe)</h3>
+        <p>Il y a trois façons d'inclure CSS dans un document HTML :</p>
+        <ol>
+            <li>Inline: Les styles sont appliqués directement aux éléments individuels à l'aide de l'attribut style.</li>
+            <div class="exemple">
+                <p class="code">
+                    &lth1 style= "color:red;">Bonjour le monde!&lt/h1&gt
+                </p>
+                </div>
+            
+            <li>Interne (ou Embedded): Les styles sont inclus dans l'élément &ltstyle&gt dans l'en-tête (&lthead&gt) de votre document HTML.</li>
+            <div class="exemple">
+                <p class="code">
+                    &lthead&gt<br>
+                    &ltstyle&gt<br>
+                    h1 {<br>
+                        color: red;<br>
+                    }<br>
+                    &lt/style&gt<br>
+                &lt/head&gt<br>&lt
+                </p>
+            </div>
+            <li>Externe: Les styles sont définis dans un fichier CSS séparé (extérieur), qui est ensuite lié à votre document HTML via l'élément &ltlink&gt.</li>
+            <div class="exemple">
+                <p class="code">
+                    &lthead&gt<br>
+                    &ltlink rel="stylesheet" href="styles.css"&gt<br>
+                &lt/head&gt
+                </p>
+            </div>
+        </ol>
+    <h3 id="1.4">1.4. Syntaxe CSS</h3>
+        <p>La syntaxe de CSS est composée de deux parties principales : le sélecteur et le bloc de déclaration.</p>
+        <p>Exemple de syntaxe :</p>
+        <div class="exemple"> 
+            <p class="code">
+                h1 { <br>
+                    color: red; <br>
+                    font-size: 20px; <br>
+                } <br>
+            </p>
+        </div>
+        <ul>
+            <li>h1 est le sélecteur. Il indique que la règle de style doit être appliquée à tous les éléments &lth1&gt.</li>
+            <li>{ color: red; font-size: 20px; } est le bloc de déclaration. Il contient une ou plusieurs déclarations. Dans cet exemple, il y a deux déclarations : color: red; et font-size: 20px;.</li>
+            <li>Chaque déclaration est composée d'une propriété CSS (color, font-size) et d'une valeur (red, 20px). Les différentes déclarations sont séparées par un point-virgule (;). </li>
+        </ul>
+
+
+<!-- Partie 2: Sélecteurs et propriétés CSS -->
+<h2 id="2">Partie 2: Sélecteurs et propriétés CSS</h2>
+
+
+    <h3 id="2.1">2.1. Sélecteurs CSS (Type, Classe, ID, Attribut, Pseudo-classes, Pseudo-éléments)</h3>
+        <p>Les sélecteurs CSS sont la partie d'une règle CSS qui détermine quels éléments dans un document HTML seront affectés par la déclaration. Il existe plusieurs types de sélecteurs CSS :</p>
+        <ul>
+            <li>Type: Ces sélecteurs correspondent à des éléments en fonction de leur nom de balise. Par exemple, le sélecteur p sélectionnera tous les éléments < p> dans le document.</li>
+            <div class="exemple">
+                <p class="code">
+                    p {<br>
+                        color: blue;<br>
+                    }<br>
+                </p>
+            </div>
+            <li>Classe: Les sélecteurs de classe sélectionnent les éléments basés sur l'attribut de classe. Par exemple, .my-class sélectionnera tous les éléments qui ont my-class comme valeur d'attribut de classe.</li>
+            <div class="exemple">
+                <p class="code">
+                    .my-class {<br>
+                        color: green;<br>
+                    }<br>
+                </p>
+            </div>
+            <li>ID: Les sélecteurs ID sélectionnent un élément unique basé sur son attribut id. Par exemple, #my-id sélectionnera l'élément avec l'ID my-id.</li>
+            <div class="exemple">
+                <p class="code">
+                    #my-id {<br>
+                        color: red;<br>
+                    }<br>
+                </p>
+            </div>
+            <li>Attribut: Les sélecteurs d'attribut sélectionnent les éléments en fonction de leurs attributs et valeurs d'attributs. Par exemple, [type="text"] sélectionnera tous les éléments qui ont un attribut type avec la valeur text.</li>
+            <div class="exemple">
+                <p class="code">
+                    [type="text"] {<br>
+                        color: purple;<br>
+                    }<br>
+                </p>
+            </div>
+            <li>Pseudo-classes: Les pseudo-classes CSS permettent de sélectionner des éléments en fonction de leur état. Par exemple, :hover permet de sélectionner un élément lorsque le curseur de la souris est dessus.</li>
+            <div class="exemple">
+                <p class="code">
+                    a:hover {<br>
+                        color: orange;<br>
+                    }<br> 
+                </p>
+            </div>
+            <li>Pseudo-éléments: Les pseudo-éléments CSS permettent de styliser une partie spécifique d'un élément. Par exemple, ::first-letter permet de sélectionner la première lettre d'un élément.</li>
+            <div class="exemple">
+                <p class="code">
+                    p::first-letter {<br>
+                        font-size: 24px;<br>
+                        color: brown;<br>
+                    }<br>
+                </p>
+            </div>
+        </ul>
+
+    <h3 id="2.2">2.2. Propriétés et valeurs CSS (Couleur, Taille, Marge, Rembourrage, Bordure)</h3>
+
+        <p>Les propriétés CSS sont les aspects que vous souhaitez styliser dans un élément (comme la couleur, la taille, la marge, le rembourrage, la bordure, etc.). Les valeurs sont ce que vous voulez définir pour ces propriétés.</p>
+        <ul>
+            <li>Couleur: La propriété color est utilisée pour définir la couleur du texte d'un élément. Par exemple, color: blue; appliquera la couleur bleue au texte.</li>
+            <li>Taille: La propriété font-size est utilisée pour contrôler la taille du texte. Par exemple, font-size: 16px; rendra le texte de taille 16px.</li>
+            <li>Marge: La propriété margin est utilisée pour créer de l'espace autour des éléments, à l'extérieur des bordures. Par exemple, margin: 10px; appliquera une marge de 10px tout autour de l'élément.</li>
+            <li>Rembourrage: La propriété padding est utilisée pour créer de l'espace autour du contenu d'un élément, à l'intérieur des bordures. Par exemple, padding: 10px; appliquera un rembourrage de 10px tout autour du contenu de l'élément.</li>
+            <li>Bordure: La propriété border est utilisée pour définir une bordure autour d'un élément. Par exemple, border: 1px solid black; appliquera une bordure solide de 1px de couleur noire autour de l'élément.</li>
+        </ul>
+        <div class="exemple">
+            <p class="code">
+                p {<br>
+                    color: blue; <br>
+                    font-size: 16px;<br>
+                    margin: 10px;<br>
+                    padding: 10px;<br>
+                    border: 1px solid black;<br>
+                }<br>
+            </p>
+        </div>
+
+
+<!-- Partie 3: Mise en forme de texte et de fond -->
+<h2 id="3">Partie 3: Mise en forme de texte et de fond</h2>
+    <h3 id="3.1">3.1. Propriétés de texte</h3>
+        <p>Il existe plusieurs propriétés CSS qui peuvent être utilisées pour styliser le texte. Voici quelques-unes des plus couramment utilisées :</p>
+        <ul>
+            <li>color: Définit la couleur du texte. Par exemple, color: red; rendra le texte rouge.</li>
+            <li>font-family: Définit la police de caractères à utiliser. Par exemple, font-family: Arial, sans-serif; utilisera la police Arial si elle est disponible, sinon elle utilisera la police par défaut sans-serif du navigateur.</li>
+            <li>font-size: Définit la taille du texte. Par exemple, font-size: 20px; rendra le texte de taille 20px.</li>
+            <li>font-weight: Définit l'épaisseur du texte. Par exemple, font-weight: bold; rendra le texte en gras.</li>
+            <li>line-height: Définit l'espace entre les lignes de texte. Par exemple, line-height: 1.5; mettra un espace de 1,5 fois la taille de la police entre les lignes de texte.</li>
+            <li>text-align: Définit l'alignement du texte. Par exemple, text-align: center; centrera le texte.</li>
+            <li>text-decoration: Ajoute une décoration au texte comme un soulignement, une ligne à travers, ou une ligne au-dessus. Par exemple, text-decoration: underline; soulignera le texte. </li>
+        </ul>
+        <div class="exemple">
+            <p class="code">
+                p {<br>
+                    color: red;<br>
+                    font-family: Arial, sans-serif;<br>
+                    font-size: 20px;<br>
+                    font-weight: bold;<br>
+                    line-height: 1.5;<br>
+                    text-align: center;<br>
+                    text-decoration: underline;<br>
+                }<br>
+            </p>
+        </div>
+
+    <h3 id="3.2">3.2. Propriétés de fond</h3>
+        <p>Les propriétés de fond CSS permettent de styliser l'arrière-plan d'un élément. Voici quelques propriétés courantes :</p>
+        <ul>
+            <li>background-color: Définit la couleur de l'arrière-plan d'un élément. Par exemple, background-color: yellow; rendra l'arrière-plan de l'élément jaune.</li>
+            <li>background-image: Permet d'ajouter une image en arrière-plan d'un élément. Par exemple, background-image: url('image.jpg'); mettra l'image 'image.jpg' en arrière-plan de l'élément.</li>
+            <li>background-repeat: Détermine si et comment une image d'arrière-plan se répète. Par exemple, background-repeat: no-repeat; empêchera l'image de se répéter.</li>
+            <li>background-position: Définit la position de l'image d'arrière-plan. Par exemple, background-position: center center; centrera l'image d'arrière-plan.</li>
+            <li>background-size: Définit la taille de l'image d'arrière-plan. Par exemple, background-size: cover; fera en sorte que l'image couvre entièrement l'arrière-plan de l'élément.</li>
+        </ul>
+        <div class="exemple">
+            <p class="code">
+                div {<br>
+                    background-color: yellow;<br>
+                    background-image: url('image.jpg');<br>
+                    background-repeat: no-repeat;<br>
+                    background-position: center center;<br>
+                    background-size: cover;<br>
+                }<br>
+            </p>
+        </div>
+<!-- Partie 4: Boîte de modèle CSS (CSS Box Model) -->
+<h2 id="4">Partie 4: Boîte de modèle CSS (CSS Box Model)</h2>
+    <h3 id="4.1">4.1. Comprendre le modèle de boîte CSS</h3>
+        <p>Le modèle de boîte CSS est fondamental pour comprendre la manière dont CSS est utilisé pour disposer les éléments HTML sur une page web.</p>
+        <p>Chaque élément HTML est considéré comme une boîte rectangulaire, et cette boîte est décrite en termes de contenu, de rembourrage (padding), de bordure (border), et de marge (margin).</p>
+        <p>Voici une description détaillée de chaque composant du modèle de boîte :</p>
+        <ol>
+            <li>Contenu (Content): C'est l'espace où le contenu réel de l'élément se trouve. Il peut s'agir de texte, d'une image, ou de tout autre type de contenu.</li>
+            <li>Rembourrage (Padding): C'est l'espace entre le contenu de l'élément et sa bordure. Le rembourrage est transparent.</li>
+            <li>Bordure (Border): C'est l'enveloppe qui entoure le rembourrage et le contenu.</li>
+            <li>Marge (Margin): C'est l'espace autour de la bordure de l'élément. C'est essentiellement l'espace "extérieur" qui sépare l'élément de ses voisins.</li>
+        </ol>
+    <h3 id="4.2">4.2. Propriétés de la boîte (Margin, Border, Padding, Content)</h3>
+        <ol>
+            <li>Margin: La propriété margin est utilisée pour créer de l'espace autour des éléments, en dehors de toute bordure définie. Par exemple, margin: 10px; appliquera une marge de 10px tout autour de l'élément.</li>
+            <li>Border: La propriété border est utilisée pour définir une bordure autour d'un élément. Par exemple, border: 1px solid black; appliquera une bordure solide de 1px de couleur noire autour de l'élément.</li>
+            <li>Padding: La propriété padding est utilisée pour créer de l'espace autour du contenu d'un élément, à l'intérieur des bordures. Par exemple, padding: 10px; appliquera un rembourrage de 10px tout autour du contenu de l'élément.</li>
+            <li>Content: Le contenu d'un élément est contrôlé par la largeur (property width) et la hauteur (property height). Par exemple, width: 200px; height: 100px; fera en sorte que l'élément ait une largeur de 200px et une hauteur de 100px.</li>
+        </ol>
+        <div class="exemple">
+            <p class="code">
+                div {<br>
+                    margin: 10px;<br>
+                    border: 1px solid black;<br>
+                    padding: 10px;<br>
+                    width: 200px;<br>
+                    height: 100px;<br>
+                }<br>
+            </p>
+        </div>
+<!-- Partie 5: Mise en page CSS -->
+<h2 id="5">Partie 5: Mise en page CSS</h2>
+    <h3 id="5.1">5.1. Positionnement CSS (Static, Relative, Absolute, Fixed, Sticky)</h3>
+        <p>Le positionnement CSS est un concept essentiel qui permet de contrôler la disposition des éléments sur une page. Il existe cinq méthodes de positionnement en CSS : statique, relative, absolue, fixe et collante (sticky).</p>
+        <ul>
+            <li>Statique (Static): C'est la valeur par défaut. Un élément positionné de manière statique est toujours positionné selon l'ordre normal du flux de la page.</li>
+            <li>Relative (Relative): Un élément positionné relativement est d'abord positionné dans l'ordre normal du flux. Ensuite, il est décalé par rapport à lui-même, en fonction des valeurs de top, right, bottom, et left.</li>
+            <li>Absolu (Absolute): Un élément positionné de manière absolue est retiré du flux normal et est ensuite positionné par rapport à l'élément parent le plus proche qui a un positionnement autre que statique. Si un tel élément parent n'existe pas, il est positionné par rapport au conteneur initial.</li>
+            <li>Fixe (Fixed): Un élément positionné de manière fixe est retiré du flux normal et est positionné par rapport à la fenêtre du navigateur. Il reste à la même position même lors du défilement de la page.</li>
+            <li>Collant (Sticky): Un élément positionné de manière collante se comporte comme un élément positionné de manière relative, jusqu'à ce que son bloc conteneur dépasse une certaine position de défilement, auquel cas il se comporte comme un élément fixe.</li>
+        </ul>
+    <h3 id="5.2">5.2. Affichage CSS et propriétés de visibilité</h3>
+        <ul>
+            <li>Display: La propriété display détermine comment un élément est affiché. Les valeurs courantes sont block (occupe toute la largeur disponible, avec un saut de ligne avant et après), inline (occupe juste la largeur nécessaire, et ne force pas de saut de ligne), et none (l'élément est complètement retiré du flux de la page, comme s'il n'existait pas).</li>
+            <li>Visibility: La propriété visibility permet de montrer ou cacher un élément sans le retirer du flux de la page. Les valeurs courantes sont visible (par défaut) et hidden (l'élément est caché, mais il prend toujours de l'espace sur la page).</li>
+        </ul>
+    <h3 id="5.3">5.3. Flexbox</h3>
+        <p>Flexbox est un modèle de mise en page CSS qui permet de disposer facilement des éléments dans une page, même lorsque leurs tailles sont inconnues ou dynamiques. Il est idéal pour les petits composants d'interface et les mises en page à une dimension.</p>
+        <ul>
+            <li>Container: Pour utiliser flexbox, vous devez définir un conteneur flex en utilisant display: flex;.</li>
+            <li>Items: Les enfants directs du conteneur deviennent automatiquement des éléments flex. Les propriétés flex peuvent alors être utilisées pour contrôler leur comportement.</li>
+        </ul>
+    <h3 id="5.4">5.4. CSS Grid</h3>
+        <p>CSS Grid est un autre modèle de mise en page CSS qui est idéal pour créer des mises en page à deux dimensions (c'est-à-dire avec des lignes et des colonnes).</p>
+        <ul>
+            <li>Container: Pour utiliser CSS Grid, vous devez définir un conteneur grid en utilisant display: grid;.</li>
+            <li>Items: Comme avec flexbox, les enfants directs du conteneur deviennent des éléments grid, et vous pouvez utiliser les propriétés grid pour contrôler leur comportement.</li>
+        </ul>
+<!-- Partie 6: Animation et transformation CSS -->
+<h2 id="6">Partie 6: Animation et transformation CSS</h2>
+    <h3 id="6.1">6.1. Transitions CSS</h3>
+        <p>Les transitions CSS permettent de changer les valeurs des propriétés d'un élément sur une durée donnée. Cela permet de créer des effets d'animation simples.</p>
+        <ul>
+            <li>transition-property: Définit la ou les propriétés qui seront animées. Par exemple, transition-property: width; animera la largeur de l'élément.</li>
+            <li>transition-duration: Définit la durée de l'animation. Par exemple, transition-duration: 2s; fera durer l'animation 2 secondes.</li>
+            <li>transition-timing-function: Définit comment les valeurs intermédiaires de l'animation sont calculées. Par exemple, transition-timing-function: ease-in; démarrera lentement l'animation.</li>
+            <li>transition-delay: Définit un délai avant que l'animation commence. Par exemple, transition-delay: 1s; commencera l'animation après 1 seconde.</li>
+        </ul>
+        <div class="exemple">
+            <p class="code">
+                div {<br>
+                    transition-property: width;<br>
+                    transition-duration: 2s;<br>
+                    transition-timing-function: ease-in;<br>
+                    transition-delay: 1s;<br>
+                }<br>
+            </p>
+        </div>
+    <h3 id="6.2">6.2. Animations CSS</h3>
+        <p>Les animations CSS sont plus complexes que les transitions et permettent de créer des animations plus sophistiquées et contrôlables.</p>
+        <p>Pour créer une animation, vous devez d'abord définir les étapes de l'animation avec la règle @keyframes, puis appliquer l'animation à un élément avec la propriété animation.</p>
+        <div class="exemple">
+            <p class="code">
+                @keyframes example {<br>
+                    0% {background-color: red;}<br>
+                    50% {background-color: yellow;}<br>
+                    100% {background-color: green;}<br>
+                }<br>
+                <br>
+                div {<br>
+                    animation-name: example;<br>
+                    animation-duration: 4s;<br>
+                }<br>
+            </p>
+        </div>
+    <h3 id="6.3">6.3. Transformations CSS</h3>
+        <p>Les transformations CSS permettent de déplacer, d'agrandir, de réduire, de tourner et de déformer un élément.</p>
+        <ul>
+            <li>translate: Déplace un élément de sa position actuelle. Par exemple, transform: translate(10px, 20px); déplacera l'élément de 10px vers la droite et 20px vers le bas.</li>
+            <li>scale: Agrandit ou réduit un élément. Par exemple, transform: scale(2, 0.5); doublera la largeur de l'élément et réduira de moitié sa hauteur.</li>
+            <li>rotate: Fait tourner un élément autour d'un point donné. Par exemple, transform: rotate(45deg); fera tourner l'élément de 45 degrés dans le sens des aiguilles d'une montre.</li>
+            <li>skew: Déforme un élément en le décalant le long de l'axe X et/ou Y. Par exemple, transform: skew(20deg, 10deg); décalera l'élément de 20 degrés le long de l'axe X et de 10 degrés le long de l'axe Y.</li>
+        </ul>
+        <div class="exemple">
+            <p class="code">
+                div {<br>
+                    transform: translate(10px, 20px) scale(2, 0.5) rotate(45deg) skew(20deg, 10deg);<br>
+                }<br>
+            </p>
+        </div>
+<!-- Partie 7: Préprocesseurs CSS -->
+<h2 id="7">Partie 7: Préprocesseurs CSS</h2>
+    <h3 id="7.1">7.1. Introduction aux préprocesseurs CSS (SASS, LESS)</h3>
+        <p>Les préprocesseurs CSS, tels que SASS (Syntactically Awesome Style Sheets) et LESS (Leaner CSS), sont des outils qui permettent d'écrire du CSS de manière plus efficace et maintenable.</p>
+        <p>Ils offrent des fonctionnalités qui ne sont pas disponibles dans le CSS pur, comme l'utilisation de variables, de fonctions, de boucles, d'héritage, de modules, entre autres.</p>
+        <ul>
+            <li>SASS: SASS est un préprocesseur qui permet de réutiliser des parties de votre code, de le diviser en morceaux plus petits et plus gérables, et de faire des calculs directement dans votre feuille de style. SASS a deux syntaxes: l'indentée (SASS) et l'accolade (SCSS).</li>
+            <li>LESS: LESS est un autre préprocesseur qui offre des fonctionnalités similaires à SASS, mais avec une syntaxe légèrement différente. LESS s'exécute côté client ou côté serveur.</li>
+        </ul>
+    <h3 id="7.2">7.2. Utiliser les variables et les fonctions dans les préprocesseurs</h3>
+        <ul>
+            <li>
+                <p>Variables: Les variables vous permettent de stocker des valeurs que vous souhaitez réutiliser tout au long de votre feuille de style. Vous pouvez stocker des choses comme les couleurs, les tailles de police, ou tout autre valeur CSS que vous voulez réutiliser. En SASS, on définit une variable en utilisant le signe $ et en LESS en utilisant le signe @.</p>
+                <div class="exemple">
+                    <p class="code">
+                        LESS:<br>
+                        @font-stack:    Helvetica, sans-serif;<br>
+                        @primary-color: #333;<br>
+                        <br>
+                        body {<br>
+                        font: 100% @font-stack;<br>
+                        color: @primary-color;<br>
+                        }<br>
+                    </p> 
+                </div>
+                <div class="exemple">
+                    <p class="code">    LESS:<br>
+                        @font-stack:    Helvetica, sans-serif;<br>
+                        @primary-color: #333;<br>
+                        <br>
+                        body {<br>
+                        font: 100% @font-stack;<br>
+                        color: @primary-color;<br>
+                        }<br>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <p>Fonctions (Mixins): Les fonctions, aussi appelées mixins, vous permettent de définir des styles que vous souhaitez réutiliser dans toute votre feuille de style. Les mixins peuvent également prendre des arguments, ce qui permet de personnaliser le style qu'ils produisent.</p>
+                <div class="exemple">
+                    <p class="code">
+                        @mixin border-radius($radius) {<br>
+                        -webkit-border-radius: $radius;<br>
+                        -moz-border-radius: $radius;<br>
+                            -ms-border-radius: $radius;<br>
+                                border-radius: $radius;<br>
+                    }<br>
+                    <br>
+                    .box { @include border-radius(10px);<br>
+                    }<br>
+                    </p>
+                </div>
+                <div class="exemple">
+                    <p class="code">
+                        .border-radius(@radius) {
+                            -webkit-border-radius: @radius;
+                            -moz-border-radius: @radius;
+                                -ms-border-radius: @radius;
+                                    border-radius: @radius;
+                        }
+                        
+                        .box { .border-radius(10px); }
+                        </p>
+                </div>
+            </li>
+        </ul>
+<!-- Partie 8: Frameworks CSS et méthodologies -->
+<h2 id="8">Partie 8: Frameworks CSS et méthodologies</h2>
+    <h3 id="8.1">8.1. Introduction à Bootstrap, Tailwind CSS</h3>
+        <ul>
+            <li>
+                <p>Bootstrap: Bootstrap est l'un des frameworks CSS les plus populaires. Il offre une grande collection de composants HTML et CSS réutilisables, ainsi que des plugins JavaScript personnalisables. Bootstrap facilite la création de sites web réactifs grâce à son système de grille flexible et à ses classes d'utilitaires.</p>
+
+            </li>
+            <li>
+                <p>Tailwind CSS: Tailwind CSS est un framework CSS de type "utility-first" qui se concentre sur l'efficacité de développement et la personnalisation. Plutôt que d'avoir des composants prédéfinis, Tailwind permet aux développeurs de créer des designs uniques en appliquant des classes utilitaires directement dans leur balisage.</p>
+
+            </li>
+        </ul>
+    <h3 id="8.2">8.2. Introduction à la méthodologie BEM, OOCSS, SMACSS</h3>
+        <ul>
+            <li>BEM (Block Element Modifier): BEM est une méthodologie qui aide les développeurs à créer des classes CSS réutilisables et à comprendre la relation entre le HTML et le CSS dans un projet. BEM divise le design d'une page en blocs (Block), éléments (Element) et modificateurs (Modifier). Cela facilite grandement la maintenance du code et sa réutilisation.</li>
+            <li>OOCSS (Object Oriented CSS): OOCSS encourage la réutilisation de code et le découplage du CSS du HTML en définissant des styles dans des "objets" réutilisables. Un "objet" en OOCSS est une abstraction du style, comme un bouton, un menu, ou un média-block.</li>
+            <li>SMACSS (Scalable and Modular Architecture for CSS): SMACSS est une approche du développement de CSS qui encourage une architecture plus flexible et scalable. SMACSS divise les styles en cinq catégories : base, layout, module, state, et theme. Cette organisation facilite la maintenance et la compréhension du code CSS.</li>
+        </ul>
+<!-- Partie 9: CSS Responsive Design -->
+<h2 id="9">Partie 9: CSS Responsive Design</h2>
+    <h3 id="9.1">9.1. Introduction au Responsive Design</h3>
+        <p>Le Responsive Design est une approche du développement web qui rend les pages web capables de bien fonctionner sur une variété de dispositifs et de tailles d'écran, depuis les smartphones aux grands écrans de bureau.</p>
+        <p>Cette approche est basée sur l'idée que le design et le développement doivent répondre au comportement de l'utilisateur et à son environnement, en fonction de la taille de l'écran, de la plateforme et de l'orientation.</p>
+        <p>Dans la pratique, le Responsive Design implique généralement l'utilisation de grilles flexibles et de mises en page, d'images flexibles et de l'utilisation de CSS media queries.</p>
+    <h3 id="9.2">9.2. Media Queries</h3>
+        <p>Les media queries sont un outil essentiel pour le Responsive Design. Elles permettent de modifier l'apparence et le comportement des sites web en fonction des caractéristiques du dispositif de l'utilisateur.</p>
+        <p>Avec les media queries, vous pouvez définir des règles CSS spécifiques qui ne s'appliqueront que lorsque certaines conditions seront remplies, par exemple lorsque la largeur de la fenêtre du navigateur sera inférieure à un certain nombre de pixels.</p>
+        <div class="exemple">
+            <p class="code">
+                @media screen and (max-width: 600px) {<br>
+                    body {<br>
+                    background-color: lightblue;<br>
+                    }<br>
+                }<br>
+            </p>
+            <p class="txt">
+                Dans cet exemple, le fond de la page sera bleu clair si la largeur de l'écran est inférieure ou égale à 600 pixels.
+            </p>
+        </div>
+    <h3 id="9.3">9.3. Approches mobile-first vs desktop-first</h3>
+        <p>Il y a deux principales approches pour le design responsive : mobile-first et desktop-first.</p>
+        <ul>
+            <li>Mobile-first: L'approche mobile-first part du principe que le design devrait être pensé d'abord pour les mobiles et ensuite être adapté pour les écrans plus grands. Cela signifie généralement que les media queries sont utilisées pour ajouter des styles supplémentaires à mesure que la taille de l'écran augmente.</li>
+            <li>Desktop-first: À l'inverse, l'approche desktop-first commence par la conception pour les grands écrans, puis ajuste ou enlève des éléments et des fonctionnalités pour les écrans plus petits. Les media queries sont généralement utilisées pour modifier le style à mesure que la taille de l'écran diminue.</li>
+        </ul>
+        <div class="exemple">
+            <p class="txt">
+                Exemple d'approche mobile-first:
+            </p>
+            <p class="code">
+                body {<br>
+                    background: blue;<br>
+                }<br>
+                
+                @media (min-width: 600px) {<br>
+                    body {<br>
+                    background: red;<br>
+                    }<br>
+                }<br>
+            </p>
+            <p class="txt">Exemple d'approche desktop-first:</p>
+            <p class="code">
+                body {<br>
+                    background: red;<br>
+                }<br>
+                <br>
+                @media (max-width: 599px) {<br>
+                    body {<br>
+                    background: blue;<br>
+                    }<br>
+                }<br>
+            </p>
+
+        </div>
+
+<!-- Partie 10: Astuces et bonnes pratiques CSS -->
+<h2 id="10">Partie 10: Astuces et bonnes pratiques CSS</h2>
+    <h3 id="10.1">10.1. Conseils pour écrire du CSS propre et efficace</h3>
+        <ul>
+            <li>Organisez votre code: Divisez votre code en sections logiques et commentez ces sections pour faciliter la navigation et la maintenance.</li>
+            <li>Utilisez les sélecteurs de manière efficace: Les sélecteurs les plus spécifiques prennent le pas sur les moins spécifiques. Utilisez cette règle à votre avantage et évitez de trop spécifier.</li>
+            <li>Réutilisez le code: Si vous vous retrouvez à utiliser les mêmes styles à plusieurs reprises, pensez à créer une classe pour ces styles et à l'appliquer chaque fois que nécessaire.</li>
+            <li>Utilisez les raccourcis CSS: Au lieu d'écrire des propriétés séparées pour margin-top, margin-right, margin-bottom, et margin-left, vous pouvez simplement utiliser la propriété margin.</li>
+        </ul>
+    <h3 id="10.2">10.2. Outils de débogage CSS</h3>
+        <ul>
+            <li>Outils de développement du navigateur: Tous les navigateurs modernes ont des outils de développement intégrés qui vous permettent de voir et de modifier votre CSS en temps réel.</li>
+            <li>Color Picker: Un outil utile pour choisir les couleurs pour votre site web.</li>
+            <li>Validator CSS: Un validateur CSS vous aide à trouver et à corriger les erreurs de syntaxe dans votre CSS.</li>
+        </ul>
+    <h3 id="10.3">10.3. Résolution de problèmes courants</h3>
+        <ul>
+            <li>Spécificité: Comprendre la spécificité en CSS peut vous aider à résoudre de nombreux problèmes de style. En général, la dernière règle déclarée et la règle la plus spécifique s'appliquent.</li>
+            <li>Héritage: Certains styles sont hérités des éléments parents, tandis que d'autres ne le sont pas. Si un style ne s'applique pas comme prévu, vérifiez si un style hérité est en conflit avec lui.</li>
+            <li>Compatibilité des navigateurs: Tous les navigateurs n'implémentent pas toutes les fonctionnalités CSS de la même manière. Vous pouvez utiliser des outils comme Can I Use pour vérifier la compatibilité des navigateurs.</li>
+        </ul>
+    <h3 id="10.4">10.4. Performance CSS</h3>
+        <ul>
+            <li>Minifier le CSS: La minification enlève les espaces blancs inutiles, les commentaires, et réduit la longueur des noms de couleur et d'autres valeurs pour rendre le fichier CSS aussi petit que possible.</li>
+            <li>Eviter les CSS inline: Utiliser des feuilles de style externes permet au navigateur de cacher le CSS, améliorant ainsi les performances.</li>
+            <li>Réduire la profondeur des sélecteurs: Les sélecteurs très profonds peuvent ralentir le rendu des pages, essayez de les garder aussi peu profonds que possible.</li>
+        </ul>
+</div>
+<footer>
+    <p>Informations du cours générés par Intelligence Artificiel Open Ai Chat GPT v4. </p>
+    <p>Contactez moi: Mazo.prod@gmail.com</p>
+    
+</footer>
+</body>
+</html>

@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>React</title>
+</head>
+<body>
+    <header>
+        <a href="../../../../index.html"><div class="logo"><img src="../logo.png" alt="logo_du_site"></div></a>
+        <nav class="navigation">
+            <a href="../pages/html.html">HTML</a>
+            <a href="../pages/css.html">CSS</a>
+            <a href="../pages/js.html">JavaScript</a>
+            <a href="../pages/php.html">PHP</a>
+            <a href="#" class="active">React</a>
+            <a href="../pages/git.html">Git&Github</a>
+
+            <a href="../../index.html">retour</a>
+        </nav>  
+    </header>
+
+    <div class="sommaire">
+        <h1>Cours de React</h1>
+        <a href="#0">Cours de React</a><br>
+        <a href="#1">Introduction</a><br>
+        <a href="#1.1">1.1. Qu'est-ce que React ?</a><br>
+        <a href="#1.2">1.2.Historique et importance de React dans le paysage web</a><br>
+        <a href="#1.3">1.3.Avantages et inconvénients de React</a><br>
+        <a href="#2">2. **Installation et configuration**</a><br>
+        <a href="#2.1">2.1. Prérequis (Node.js, npm, etc.)</a><br>
+        <a href="#2.2">2.2.Création d'une nouvelle application React avec Create React App</a><br>
+        <a href="#2.3">2.3.Structure d'une application React</a><br>
+        <a href="#3">3. **Composants React**</a><br>
+        <a href="#3.1">3.1 Introduction aux composants</a><br>
+        <a href="#3.2">3.2.Composants fonctionnels vs composants de classe</a><br>
+        <a href="#3.3">3.3.Props et state</a><br>
+        <a href="#4">4. **JSX (JavaScript XML)**</a><br>
+        <a href="#4.1">4.1. Syntaxe et avantages</a><br>
+        <a href="#4.2">4.2.Intégration de JavaScript dans JSX</a><br>
+        <a href="#4.3">4.3.Affichage conditionnel et listes</a><br>
+        <a href="#5">5. **Cycle de vie des composants et Hooks**</a><br>
+        <a href="#5.1">5.1.Les méthodes du cycle de vie dans les composants de classe</a><br>
+        <a href="#5.2">5.2. Introduction aux Hooks (useState, useEffect, etc.)</a><br>
+        <a href="#5.3">5.3.Création de Hooks personnalisés</a><br>
+        <a href="#6">6. **Gestion des états avec Redux**</a><br>
+        <a href="#6.1">6.1. Présentation de Redux</a><br>
+        <a href="#6.2">6.2. Actions, réducteurs, et store</a><br>
+        <a href="#6.3">6.3.Connexion de React avec Redux</a><br>
+        <a href="#7">7. **Navigation avec React Router**</a><br>
+        <a href="#7.1">7.1. Configuration et utilisation de base</a><br>
+        <a href="#7.2">7.2.Routes dynamiques</a><br>
+        <a href="#7.3">7.3. Transitions et animations</a><br>
+        <a href="#8">8. **Styling dans React**</a><br>
+        <a href="#8.1">8.1. CSS en JS avec Styled Components</a><br>
+        <a href="#8.2">8.2. Frameworks populaires (Material-UI, Ant Design, etc.)</a><br>
+        <a href="#8.3">8.3.CSS Modules</a><br>
+        <a href="#9">9. **Tests et déploiement**</a><br>
+        <a href="#9.1">9.1.Introduction aux tests avec Jest et React Testing Library</a><br>
+        <a href="#9.2">9.2. Mocks et simulation d'événements</a><br>
+        <a href="#9.3">9.3. Déploiement d'une application React (Netlify, Vercel, etc.)</a><br>
+        <a href="#10">10. **Bonnes pratiques et performances**</a><br>
+        <a href="#10.1">10.1. Optimisation des performances (React.memo, useMemo, etc.)</a><br>
+        <a href="#10.2">10.1 Conseils de codage et bonnes pratiques</a><br>
+        <a href="#10.3">10.2 Analyse des performances avec les outils de développement React</a><br>
+        <a href="#11">11. **Écosystème et ressources**</a><br>
+        <a href="#11.1">11.1. Bibliothèques complémentaires populaires (Formik, Axios, etc.)</a><br>
+        <a href="#11.2">11.2.Outils de développement (Extensions navigateur, outils de debugging)</a><br>
+        <a href="#11.3">11.3. Ressources pour rester à jour</a><br>
+        <a href="#12">12. Conseils supplémentaires</a><br>
+
+    </div>
+
+<div class="cours">
+    <h1 id="0">Cours de React</h1>
+    <h2 id="1">Introduction</h2>
+        <h3 id="1.1">1.1. Qu'est-ce que React ?</h3>
+            <p>React est une bibliothèque JavaScript open-source développée par Facebook, conçue pour créer des interfaces utilisateur (UI) de manière efficace et flexible. React se concentre principalement sur la construction de composants UI, qui sont les briques de base d'une application. Ces composants sont réutilisables, ce qui signifie que vous pouvez les utiliser dans différentes parties de votre application sans avoir à réécrire le même code.</p>
+            <p>Contrairement à d'autres frameworks ou bibliothèques, React n'est pas un framework MVC (Modèle-Vue-Contrôleur) ; c'est plutôt la "V" (Vue) dans MVC. Cela signifie que React gère uniquement la partie affichage de votre application, vous laissant le choix de la manière dont vous souhaitez gérer le reste, comme la logique métier ou les appels à une API.</p>
+        <h3 id="1.2">1.2.Historique et importance de React dans le paysage web</h3>
+            <p>React a été créé par Jordan Walke, un ingénieur logiciel chez Facebook, et a été présenté pour la première fois lors de la conférence JavaScript de 2013. À l'origine, React a été développé pour résoudre certains des problèmes de performance rencontrés par Facebook avec ses grandes applications complexes. Il a été conçu pour permettre une mise à jour efficace et agréable des interfaces utilisateur avec un minimum de rechargements.</p>
+            <p>Depuis son introduction, React est devenu l'une des bibliothèques et des cadres front-end les plus populaires, avec une grande communauté, de nombreux outils et une énorme base de code open-source. De grandes entreprises comme Airbnb, Uber, et bien sûr Facebook et Instagram l'utilisent pour leurs produits.</p>
+            <p>L'une des raisons de la popularité croissante de React est la philosophie derrière elle, qui favorise la composition modulaire, une meilleure cohésion et un couplage faible, rendant le développement plus prévisible et plus facile à maintenir.</p>
+        <h3 id="1.3">1.3.Avantages et inconvénients de React</h3>
+        <h4>Avantages :</h4>
+        <ul>
+            <li>Composabilité et réutilisabilité : Les composants sont au cœur de React, permettant aux développeurs de créer des UI réutilisables et modulaires.</li>
+            <li>Performances : Avec son algorithme de réconciliation et son DOM virtuel, React minimise les mises à jour du DOM réel, ce qui améliore les performances.</li>
+            <li>Flexibilité : Contrairement à d'autres frameworks plus prescriptifs, React vous donne la liberté de choisir comment vous souhaitez structurer votre application, intégrer des bibliothèques tierces ou gérer l'état.</li>
+            <li>Communauté robuste et écosystème : React bénéficie d'une large communauté, d'une multitude de ressources d'apprentissage, de bibliothèques complémentaires et d'outils de développement.</li>
+        </ul>
+        <h4>Inconvénients :</h4>
+        <ul>
+            <li>Courbe d'apprentissage : Pour les débutants, comprendre les concepts de React comme le JSX, le state, le cycle de vie des composants et les hooks peut être un peu déroutant.</li>
+            <li>Choix de l'écosystème : La flexibilité de React signifie que les développeurs doivent souvent choisir parmi de nombreuses bibliothèques tierces pour des fonctionnalités comme la gestion de l'état ou le routage, ce qui peut être accablant.</li>
+            <li>Verbosité : Dans certaines situations, React peut nécessiter plus de code que d'autres solutions, bien que cela puisse être atténué par des pratiques et des outils appropriés.</li>
+        </ul>
+        <p>En conclusion, React est une puissante bibliothèque pour construire des interfaces utilisateur dynamiques et interactives. Comme toute technologie, elle a ses forces et ses faiblesses, mais son approche modulaire et sa grande communauté en font un choix solide pour de nombreux développeurs et entreprises.</p>
+    <h2 id="2">2. **Installation et configuration**</h2>
+        <h3 id="2.1">2.1. Prérequis (Node.js, npm, etc.)</h3>
+                <p>Avant de plonger dans le développement avec React, il est essentiel de disposer de certains outils et connaissances de base.</p>
+            <h4>Node.js:</h4>
+                <p>React, comme de nombreux autres outils modernes de développement web, repose sur Node.js. Node.js est un environnement d'exécution JavaScript qui permet d'exécuter du JavaScript côté serveur. Vous n'avez pas besoin de connaître Node.js en profondeur pour utiliser React, mais il est nécessaire de l'avoir installé pour accéder à des outils tels que npm ou yarn.           </p>
+            <h4>npm (Node Package Manager):</h4>
+                <p>Lorsque vous installez Node.js, npm est également installé. npm est un gestionnaire de paquets qui facilite l'installation, la mise à jour et la gestion des bibliothèques et des outils JavaScript. C'est avec npm que vous allez installer React et d'autres paquets nécessaires.</p>
+            <h4>Éditeur de code:</h4>
+                <p>Un bon éditeur de code facilitera grandement votre développement. Des éditeurs tels que Visual Studio Code (VSCode) ou WebStorm sont fortement recommandés car ils offrent de nombreuses extensions et outils pour le développement React.</p>
+        <h3 id="2.2">2.2.Création d'une nouvelle application React avec Create React App</h3>
+            <p>Create React App (CRA) est un outil officiellement soutenu par React qui permet de configurer rapidement un nouvel environnement de développement React sans se perdre dans la configuration des outils. Voici comment démarrer:</p>
+            <h4>Installer Create React App:</h4>
+            <p>Si ce n'est pas déjà fait, installez CRA globalement:</p>
+            <div class="exemple">
+                <p class="code">
+                    npm install -g create-react-app
+                </p>
+            </div>
+            <h4>Créer une nouvelle application:</h4>
+            <p>Créez une nouvelle application en exécutant:</p>
+            <div class="exemple">
+                <p class="code">
+                    create-react-app nom-de-votre-app
+                </p>
+            </div>
+
+            <h4>Démarrer l'application:</h4>
+            <p>Naviguez vers le répertoire de votre nouvelle application et démarrez-la:</p>
+            <div class="exemple">
+                <p class="code">
+                    cd nom-de-votre-app<br>npm start
+                </p>
+            </div>
+            <p>Votre navigateur s'ouvrira automatiquement et affichera votre nouvelle application React. Toute modification que vous apportez au code sera automatiquement reflétée dans le navigateur, grâce à la fonction de rechargement à chaud.</p>
+        
+        <h3 id="2.3">2.3.Structure d'une application React</h3>
+            <p>Lorsque vous créez une application avec CRA, vous obtenez une structure de dossier simple et claire. Voici une vue d'ensemble:</p>
+            <ol>
+                <li>node_modules/: Contient toutes les dépendances du projet.</li>
+                <li>public/: Fichiers publics comme l'index.html, les icônes et le manifeste.</li>
+                <li>src/: C'est ici que se trouve le cœur de votre application React.<ol>
+                    <li>App.js: Le composant principal de l'application.</li>
+                    <li>index.js: Point d'entrée de l'application, où le composant App est rendu dans le DOM.</li>
+                    <li>... D'autres fichiers et dossiers que vous ajoutez en fonction de la complexité de votre application.  </li>
+                </ol></li>
+                <li>package.json: Contient la liste des paquets et scripts pour votre projet.</li>
+                <li>.gitignore: Spécifie les fichiers/dossiers à ignorer si vous utilisez Git.</li>
+            </ol>
+            <p>À mesure que votre application grandit, vous voudrez peut-être organiser votre dossier src/ en sous-dossiers tels que components/, assets/, utils/, etc. La structure exacte dépendra de vos besoins et de vos préférences personnelles.</p>
+    <h2 id="3">3. **Composants React**</h2>
+            <p>Les composants sont au cœur de la philosophie de React. Ils représentent des éléments réutilisables de votre interface utilisateur et permettent de décomposer votre application en pièces plus petites et gérables.</p>
+        <h3 id="3.1">3.1 Introduction aux composants</h3>
+            <p>Un composant React est une unité indépendante qui décrit une partie de l'interface utilisateur. Chaque composant est responsable de rendre une partie de l'UI et peut également gérer ses propres états et événements. L'idée principale est de diviser l'interface utilisateur en composants individuels, chaque composant ayant sa propre responsabilité.</p>
+            <p>En combinant ces composants, vous pouvez créer des interfaces utilisateur complexes. Par exemple, une barre de navigation, un bouton, ou une carte d'article sont tous des exemples de composants que vous pourriez créer dans une application React.</p>
+        <h3 id="3.2">3.2.Composants fonctionnels vs composants de classe</h3>
+            <p>Il existe deux principales façons de définir des composants dans React : en tant que composant fonctionnel ou en tant que composant de classe.</p>
+            <h4>Composants fonctionnels :</h4>
+            <ul>
+                <li>Ce sont des fonctions JavaScript qui acceptent un objet props et renvoient un élément React.</li>
+                <li>Avec l'introduction des Hooks dans React 16.8, les composants fonctionnels peuvent gérer leur propre état et utiliser d'autres fonctionnalités de React autrefois réservées aux composants de classe.</li>
+                <li>Ils sont généralement plus concis et faciles à lire.</li>
+            </ul>
+            <div class="exemple">
+                <p class="code">
+                    function Welcome(props) {<br>
+                        return &lth1&gtBonjour, {props.name}&lt/h1&gt;<br>
+                      }
+                </p>
+            </div>
+            <h4>Composants de classe :</h4>
+            <ul>
+                <li>Ces composants sont plus robustes et étaient auparavant la seule manière de gérer un état ou d'utiliser des fonctionnalités comme le cycle de vie.</li>
+                <li>Ils nécessitent une syntaxe plus verbale par rapport aux composants fonctionnels.</li>
+            </ul>
+            <div class="exemple">
+                <p class="code">
+                    class Welcome extends React.Component {<br>
+                        render() {<br>
+                          return &lth1&gtBonjour, {this.props.name}&lt/h1&gt;<br>
+                        }<br>
+                    }<br>
+                </p>
+            </div>
+            <p>Avec l'introduction et la maturation des Hooks, la communauté et la documentation officielle ont tendance à favoriser les composants fonctionnels pour la plupart des cas d'utilisation.</p>
+        <h3 id="3.3">3.3.Props et state</h3>
+        <h4>Props :</h4>
+        <ul>
+            <li>Les props (ou propriétés) sont une manière de transmettre des données d'un composant parent à un composant enfant.</li>
+            <li>Les props sont immuables, ce qui signifie qu'un composant ne peut pas modifier ses props directement. Il doit informer le composant parent de toute modification souhaitée.</li>
+        </ul>
+        <div class="exemple">
+            <p class="code">
+                function Welcome(props) {<br>
+                      return &lth1&gtBonjour, {props.name}&lt/h1&gt;<br>
+                    }<br>
+                }<br>
+            </p>
+            <p>Dans cet exemple, name est une prop passée au composant Welcome.</p>
+        </div>
+        <h4>State :</h4>
+        <ul>
+            <li>L'état (ou state) est une manière pour un composant de maintenir et de gérer ses propres données internes qui peuvent changer au fil du temps.</li>
+            <li>Contrairement aux props, l'état est mutable, mais vous ne devez jamais le modifier directement. Au lieu de cela, utilisez la méthode setState dans les composants de classe ou le Hook useState dans les composants fonctionnels.</li>
+        </ul>
+        <div class="exemple">
+            <h4>Exemple avec un composant de classe</h4>
+            <p class="code">
+                class Counter extends React.Component {<br>
+                    constructor(props) {<br>
+                      super(props);<br>
+                      this.state = { count: 0 };<br>
+                    }<br>
+                    <br>
+                    handleIncrement = () => {<br>
+                      this.setState({ count: this.state.count + 1 });<br>
+                    };<br>
+                    <br>
+                    render() {<br>
+                      return (<br>
+                        &ltdiv&gt<br>
+                          &ltp&gtCompteur : {this.state.count}&lt/p&gt<br>
+                          &ltbutton onClick={this.handleIncrement}&gtIncrementer&lt/button&gt<br>
+                        &lt/div&gt<br>
+                      );<br>
+                    }<br>
+                  }<br>
+                  
+            </p>
+            <p>Dans cet exemple, name est une prop passée au composant Welcome.</p>
+        </div>
+
+        <div class="exemple">
+            <h4>Exemple avec un composant fonctionnel utilisant le Hook useState :</h4>
+            <p class="code">
+                function Counter() {<br>
+                    const [count, setCount] = useState(0);<br>
+                    <br>
+                    return (<br>
+                      &ltdiv&gt<br>
+                        &ltp&gtCompteur : {count}&lt/p&gt<br>
+                        &ltbutton onClick={() =&gt setCount(count + 1)}&gtIncrementer&lt/button&gt<br>
+                      &lt/div&gt<br>
+                    );<br>
+                  }<br>
+                  <br>
+            </p>
+        </div>
+
+
+    <h2 id="4">4. **JSX (JavaScript XML)**</h2>
+    <p>Le JSX est une extension de la syntaxe JavaScript recommandée par React pour décrire l'interface utilisateur. Si vous avez déjà travaillé avec des langages tels que XML ou HTML, la syntaxe JSX vous semblera familière. Cependant, elle offre une puissance supplémentaire en vous permettant d'intégrer du JavaScript directement dans votre markup.</p>
+        <h3 id="4.1">4.1. Syntaxe et avantages</h3>
+        <h4>Syntaxe </h4>
+        <p>JSX ressemble à s'y méprendre à du HTML, mais il est interprété en JavaScript. Par exemple :</p>
+        <div class="exemple">
+            <p class="code">
+                const element = &lth1&gtBonjour, monde!&lt/h1&gt;
+            </p>
+        </div>
+        <h4>Avantages:</h4>
+        <ol>
+            <li>Lisibilité : JSX offre une manière claire et concise de décrire la structure de l'interface utilisateur.</li>
+            <li>Intuitivité : Si vous connaissez HTML, vous pouvez rapidement comprendre JSX.</li>
+            <li>Puissance : Avec JSX, vous pouvez insérer des expressions JavaScript directement dans votre markup, ce qui offre une grande flexibilité.</li>
+            <li>Optimisation : Les outils tels que Babel transforment le JSX en appels de fonctions JavaScript optimisées pour la performance lors du processus de build.</li>
+        </ol>
+        <h3 id="4.2">4.2.Intégration de JavaScript dans JSX</h3>
+            <p></p>
+            <div class="exemple">
+                <p class="code">
+                    const name = 'Sarah';<br>
+const element = &lth1&gtBonjour, {name}!&lt/h1&gt;
+                </p>
+            </div>
+        <h3 id="4.3">4.3.Affichage conditionnel et listes</h3>  
+        <h4>Affichage conditionnel :</h4>      
+        <p>Il y a plusieurs manières de gérer l'affichage conditionnel en React. L'une des plus courantes est l'utilisation de l'opérateur ternaire :</p>
+        <div class="exemple">
+            <p class="code">const isLoggedIn = true;<br>
+                const element = &ltdiv&gt{isLoggedIn ? 'Bienvenue!' : 'Veuillez vous connecter.'}&lt/div&gt;
+                </p>
+        </div>
+        <p>Une autre approche consiste à utiliser des fonctions ou des variables pour déterminer ce qui sera rendu :</p>
+
+    <div class="exemple">
+        <p class="code">
+            const isLoggedIn = true;<br>
+            const message = isLoggedIn ? 'Bienvenue!' : 'Veuillez vous connecter.';<br>
+            const element = &ltdiv&gt{message}&lt/div&gt;<br>
+        </p>
+    </div>
+    <h4>Listes:</h4>
+    <p>Pour afficher une liste d'éléments, vous pouvez utiliser la méthode map des tableaux JavaScript :</p>
+    <div class="exemple">
+        <p class="code">
+            const numbers = [1, 2, 3, 4, 5];<br>
+            const listItems = numbers.map((number) =&gt<br>
+              &ltli key={number.toString()}>{number}&lt/li&gt<br>
+            );<br>
+            const element = &ltul&gt{listItems}&lt/ul&gt;<br>
+        </p>
+        <p>Notez l'utilisation de l'attribut key. C'est une aide pour React afin d'optimiser le rendu des listes. Chaque key doit être unique au sein de la liste.</p>
+    </div>
+    <p>En maîtrisant le JSX, vous avez le pouvoir de créer des interfaces utilisateurs dynamiques et réactives en React. Bien qu'il soit possible de travailler sans JSX en utilisant uniquement des fonctions React, le JSX offre une syntaxe plus déclarative et intuitive pour décrire vos composants.</p>
+    <h2 id="5">5. **Cycle de vie des composants et Hooks**</h2>
+    <p>Les composants dans React ont un cycle de vie bien défini. Ce cycle de vie décrit différentes étapes par lesquelles passe un composant, de sa création à sa destruction. En comprenant ces étapes, vous pouvez exécuter du code spécifique à des moments clés dans la vie d'un composant. Avec l'introduction des Hooks dans React 16.8, ces concepts ont été adaptés pour être utilisés avec des composants fonctionnels, offrant ainsi une alternative au cycle de vie traditionnel des composants de classe</p>
+        <h3 id="5.1">5.1.Les méthodes du cycle de vie dans les composants de classe</h3>
+        <p>Les méthodes du cycle de vie sont spécifiques aux composants de classe. Voici quelques-unes des méthodes les plus utilisées :</p>
+        <ul>
+            <li>constructor(props) : Appelée avant que le composant soit monté. C'est généralement l'endroit où vous initialiserez le state et lierez les méthodes de gestion des événements.</li>
+            <li>componentDidMount() : Appelée immédiatement après que le composant est monté dans le DOM. C'est un bon endroit pour exécuter des requêtes réseau ou initialiser des abonnements.</li>
+            <li>shouldComponentUpdate(nextProps, nextState) : Appelée avant que le composant ne soit re-rendu à la suite d'un changement de state ou de props. Elle permet de contrôler l'optimisation des rendus en retournant true ou false.</li>
+            <li>componentDidUpdate(prevProps, prevState, snapshot) : Appelée après une mise à jour du composant. Vous pouvez comparer les props et le state actuels avec ceux précédents pour exécuter certains effets.</li>
+            <li>componentWillUnmount() : Appelée juste avant que le composant ne soit démonté et détruit. C'est l'endroit idéal pour nettoyer les timers, annuler les requêtes réseau ou supprimer les abonnements.</li>
+        </ul>
+        <h3 id="5.2">5.2. Introduction aux Hooks (useState, useEffect, etc.)</h3>
+        <p>Les Hooks ont été introduits pour permettre aux composants fonctionnels d'avoir accès à des fonctionnalités auparavant réservées aux composants de classe, comme le state et le cycle de vie. Voici une introduction à deux des Hooks les plus fondamentaux :</p>
+        <ul>
+            <li>
+                <p>useState : Permet d'ajouter un state local à un composant fonctionnel.</p>
+                <div class="exemple">
+                    <p class="code">
+                        const [count, setCount] = useState(0);
+                    </p>
+                </div>
+            </li>
+            <li>
+                <p>useEffect : Permet d'exécuter des effets secondaires (comme des requêtes réseau ou des modifications manuelles du DOM) dans des composants fonctionnels.</p>
+                <div class="exemple">
+                    <p class="code">
+                        useEffect(() => {
+                            document.title = `Vous avez cliqué ${count} fois`;
+                          });
+                    </p>
+                </div>   
+            </li>
+        </ul>
+        <p>Il existe de nombreux autres Hooks (comme useContext, useReducer, etc.), mais useState et useEffect sont les points d'entrée essentiels pour comprendre comment ils fonctionnent.</p>
+        <h3 id="5.3">5.3.Création de Hooks personnalisés</h3>
+        <p>Un des avantages des Hooks est que vous pouvez les combiner pour créer vos propres Hooks personnalisés. Ces Hooks peuvent encapsuler une logique métier complexe, la rendre réutilisable et simplifier vos composants.</p>
+        <div class="exemple">
+            <p>Exemple : Imaginons un Hook personnalisé pour écouter la taille de la fenêtre du navigateur :</p>
+            <p class="code">
+                function useWindowSize() {<br>
+                    const [size, setSize] = useState({ width: window.innerWidth, height: window.innerHeight });<br>
+                    <br>
+                    useEffect(() => {<br>
+                      const handleResize = () =&gt {<br>
+                        setSize({ width: window.innerWidth, height: window.innerHeight });<br>
+                      };<br>
+                      <br>
+                      window.addEventListener('resize', handleResize);<br>
+                      return () =&gt {<br>
+                        window.removeEventListener('resize', handleResize);<br>
+                      };<br>
+                    }, []);<br>
+                    <br>
+                    return size;<br>
+                  }<br>
+                  <br>
+            </p>
+        </div>
+        <p>Vous pouvez ensuite utiliser ce Hook dans n'importe quel composant pour obtenir la taille actuelle de la fenêtre :</p>
+        <div class="exemple">
+            <p class="code">
+                function Component() {<br>
+                    const size = useWindowSize();<br>
+                    return &ltdiv&gtLa largeur de la fenêtre est {size.width}px&lt/div&gt;<br>
+                  }<br>
+            </p>
+        </div>
+<p>La création de Hooks personnalisés permet une grande modularité et réutilisabilité de la logique de votre application.</p>
+<p>En comprenant le cycle de vie des composants et les Hooks, vous aurez une vision complète de comment les données et les effets sont gérés dans React, permettant des applications dynamiques et réactives.</p>
+
+    <h2 id="6">6. **Gestion des états avec Redux**</h2>
+    <p>La gestion de l'état global est un aspect crucial dans le développement d'applications front-end de grande envergure. Alors que React fournit les outils nécessaires pour gérer l'état local d'un composant, il peut devenir compliqué de gérer un état partagé entre de nombreux composants à des niveaux d'arborescence variés. C'est ici que Redux entre en jeu. Il fournit une solution élégante pour gérer l'état global d'une application de manière prévisible.</p>
+        <h3 id="6.1">6.1. Présentation de Redux</h3>
+        <p>Redux est une bibliothèque de gestion d'état prévisible pour les applications JavaScript. Il aide à écrire des applications qui se comportent de manière cohérente, s'exécutent dans différents environnements (client, serveur et natif) et sont faciles à tester.</p>
+        <h4>Caractéristiques principales :
+
+        </h4>
+        <ul>
+            <li>Un seul store : Contrairement à d'autres solutions, Redux utilise un seul store pour l'ensemble de l'état de l'application. Cela rend plus facile le suivi des modifications apportées à l'état au fil du temps.</li>
+            <li>Etat immuable : L'état dans Redux est en lecture seule, et toute modification de l'état nécessite la génération d'un nouvel état.</li>
+            <li>Flux de données unidirectionnel : Cela garantit que la logique de votre application est plus prévisible et plus facile à comprendre.</li>
+        </ul>
+        <h3 id="6.2">6.2. Actions, réducteurs, et store</h3>
+        <p>Actions : Ce sont des paquets d'informations qui envoient des données de votre application vers votre store. Elles sont envoyées en utilisant la méthode store.dispatch().</p>
+        <div class="exemple">
+            <p class="code">
+                {<br>
+                    type: 'ADD_TODO',<br>
+                    text: 'Apprendre Redux'<br>
+                    
+                }<br>
+            </p>
+        </div>
+        <p>Réducteurs : Dans Redux, les actions décrivent uniquement "ce qui s'est passé", mais ne spécifient pas comment l'application change en réponse. C'est le rôle des réducteurs. Un réducteur est une fonction pure qui prend l'état précédent et une action, et retourne le nouvel état.</p>
+        <div class="exemple">
+            <p class="code">
+                function todos(state = [], action) {<br>
+                    switch (action.type) {<br>
+                      case 'ADD_TODO':<br>
+                        return [...state, action.text];<br>
+                      default:<br>
+                        return state;<br>
+                    }<br>
+                  }<br>
+            </p>
+        </div>
+        <p>Store : Le store est l'objet qui rassemble les actions et les réducteurs. Il a les responsabilités suivantes :</p>
+        <ul>
+            <li>Contient l'état global de l'application.</li>
+            <li>Donne accès à l'état via getState().</li>
+            <li>Permet la mise à jour de l'état via dispatch(action).</li>
+            <li>Enregistre les auditeurs via subscribe(listener).</li>
+        </ul>
+        <h3 id="6.3">6.3.Connexion de React avec Redux</h3>
+        <p>React-Redux est la bibliothèque officielle de liaisons UI pour Redux. Elle permet à vos composants React de lire les données du store Redux et d'envoyer des actions pour mettre à jour le store.</p>
+        <p>Provider : C'est un composant de réaction fourni par React-Redux qui enveloppe votre application et met le store Redux à disposition de tous les composants conteneurs.</p>
+        <p>connect() : C'est une fonction fournie par React-Redux pour connecter vos composants à votre store Redux.</p>
+        <div class="exemple">
+            <p class="code">
+                import { connect } from 'react-redux';
+
+const TodoList = ({ todos }) =&gt (<br>
+  &ltul&gt<br>
+    {todos.map(todo =&gt &ltli key={todo.id}&gt{todo.text}&lt/li&gt)}<br>
+  &lt/ul&gt<br>
+);<br>
+<br>
+const mapStateToProps = state =&gt {<br>
+  return { todos: state.todos };<br>
+};<br>
+<br>
+export default connect(mapStateToProps)(TodoList);<br>
+            </p><br>
+        </div>
+<p>Avec connect(), le composant est automatiquement mis à jour lorsque l'état du store change.</p>
+<p>Redux, avec sa structure et sa discipline, apporte de la prévisibilité et de la transparence à vos applications React, rendant la logique de votre application plus facile à comprendre, à débugger et à tester.</p>
+    <h2 id="7">7. **Navigation avec React Router**</h2>
+    <p>La création d'applications monopage (SPA - Single Page Applications) a révolutionné la façon dont nous interagissons avec des sites web, offrant une expérience utilisateur plus fluide et rapide. Toutefois, il est essentiel de gérer la navigation entre les différentes vues ou pages de ces applications. React Router est la solution de routage la plus populaire pour React, permettant de créer des routes dynamiques avec une interface simple.</p>
+        <h3 id="7.1">7.1. Configuration et utilisation de base</h3>
+        <p>Installation : Avant d'utiliser React Router, vous devez l'installer.</p>
+        <div class="exemple">
+            <p class="code">npm install react-router-dom</p>
+        </div>
+        <h4>Utilisation de base :</h4>
+        <p>Pour utiliser React Router, vous devez envelopper toute votre application avec le composant BrowserRouter.</p>
+            <div class="exemple">
+                <p class="code">
+                    import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';<br>
+                    <br>
+                    function App() {<br>
+                    return (<br>
+                        &ltRouter&gt<br>
+                        &ltSwitch&gt<br>
+                            &ltRoute path="/" exact component={HomePage} /&gt<br>
+                            &ltRoute path="/about" component={AboutPage} /&gt<br>
+                        &lt/Switch&gt<br>
+                        &lt/Router&gt<br>
+                    );<br>
+                    }<br>
+                </p>
+            </div>
+            <p>Ici, Switch s'assure qu'une seule route est rendue à la fois. Route définit le composant qui doit être rendu pour un chemin donné.</p>
+        <h3 id="7.2">7.2.Routes dynamiques</h3>
+        <p>Parfois, vous voudrez avoir des chemins qui peuvent changer, par exemple, pour afficher le profil d'un utilisateur en fonction de son ID.</p>
+        <div class="exemple">
+            <p class="code">
+                &ltRoute path="/user/:id" component={UserProfile} /&gt
+            </p>
+        </div>
+        <p>Dans le composant UserProfile, vous pouvez accéder à l'ID via props.match.params.id.</p>
+        <div class="exemple">
+            <p class="code">
+                function UserProfile(props) {<br>
+                    return &ltdiv&gtUser ID: {props.match.params.id}&lt/div&gt;<br>
+                  }<br>
+            </p>
+        </div>
+        <p>Cette fonctionnalité permet de créer des routes dynamiques qui s'adaptent en fonction des paramètres de l'URL.</p>
+        <h3 id="7.3">7.3. Transitions et animations</h3>
+            <p>L'intégration d'animations lors des transitions entre les routes peut améliorer l'expérience utilisateur. React Router n'inclut pas directement cette fonctionnalité, mais vous pouvez l'obtenir en utilisant des bibliothèques tierces ou des techniques CSS.</p>
+            <p>Utilisation de CSSTransition : Une façon populaire d'ajouter des animations est d'utiliser la bibliothèque react-transition-group.</p>
+            <div class="exemple">
+                <p class="code">
+                    npm install react-transition-group
+                </p>
+            </div>
+            <p>Vous pouvez alors envelopper votre route dans un composant CSSTransition.</p>
+            <div class="exemple">
+                <p class="code">
+                        import { CSSTransition } from 'react-transition-group';<br>
+                        <br>
+                        // ... (au sein de votre composant Router)<br>
+                        <br>
+                        &ltCSSTransition<br>
+                        in={!!match}<br>
+                        timeout={300}<br>
+                        classNames="page"<br>
+                        unmountOnExit<br>
+                        &gt <br>
+                        &ltdiv className="page"&gt
+                            &ltRoute component={ComponentToAnimate} /&gt
+                        &lt/div&gt
+                        &lt/CSSTransition&gt
+
+                </p>
+            </div>
+        <p>Les styles CSS correspondants pourraient ressembler à ceci :</p>
+        <div class="exemple">
+            <p class="code">
+                .page-enter {<br>
+                    opacity: 0;<br>
+                }<br>
+                
+                .page-enter-active {<br>
+                    opacity: 1;<br>
+                    transition: opacity 300ms;<br>
+                }<br>
+                <br>
+                .page-exit {<br>
+                    opacity: 1;<br>
+                }<br>
+                <br>
+                .page-exit-active {<br>
+                    opacity: 0;<br>
+                    transition: opacity 300ms;<br>
+                }<br>
+                <br>
+            </p>
+        </div>
+    <p>En utilisant ces techniques, vous pouvez ajouter des transitions fluides entre les différentes routes de votre application React.</p>
+        <p>React Router, combiné à la flexibilité de React lui-même, vous permet de créer des expériences de navigation riches et dynamiques. Il offre un moyen puissant de définir et de gérer des routes pour vos applications React, rendant la navigation entre les vues aussi fluide que possible.</p>
+            <h2 id="8">8. **Styling dans React**</h2>
+            <p>L'apparence et la sensation d'une application sont aussi essentielles que sa logique fonctionnelle. React offre une grande flexibilité en matière de style, permettant aux développeurs d'utiliser diverses approches pour styliser leurs composants.</p>
+        <h3 id="8.1">8.1. CSS en JS avec Styled Components</h3>
+        <p>Styled Components est l'une des bibliothèques les plus populaires pour le "CSS-in-JS". Elle permet aux développeurs de créer des composants encapsulés avec des styles, garantissant que les styles ne s'appliquent qu'au composant concerné.</p>
+        <div class="commande">npm install styled-components</div>
+
+        <div class="exemple">
+            <p class="code">
+                import styled from 'styled-components';<br>
+                <br>
+                const Button = styled.button`<br>
+                background-color: blue;<br>
+                color: white;<br>
+                padding: 10px 15px;<br>
+                border-radius: 4px;<br>
+                border: none;<br>
+                font-size: 16px;<br>
+                `;<br>
+                <br>
+                function MyApp() {<br>
+                return &ltButton&gtCliquez-moi&lt/Button&gt;
+                }
+            </p>
+        </div>
+        <p>Les avantages de Styled Components sont nombreux :</p>
+        <ul>
+            <li>Isolation des styles : Évite les conflits CSS.</li>
+            <li>Flexibilité : Facilite l'utilisation de props pour changer dynamiquement le style.</li>
+            <li>Thématisation : Possibilité d'appliquer facilement des thèmes à votre application.</li>
+        </ul>
+        <h3 id="8.2">8.2. Frameworks populaires (Material-UI, Ant Design, etc.)</h3>
+        <p>Material-UI est une bibliothèque populaire qui implémente les guidelines de Material Design de Google pour React. Elle fournit une gamme de composants stylés prêts à l'emploi.</p>
+        <p>Ant Design est une autre bibliothèque de design pour UI, offrant un ensemble riche de composants de haute qualité pour construire des applications riches et interactives.</p>
+        <p>Ces frameworks sont utiles pour :</p>
+        <ul>
+            <li>Rapidité de développement : Pas besoin de réinventer la roue pour chaque composant</li>
+            <li>Cohérence : Ils offrent un design cohérent et moderne.</li>
+            <li>Flexibilité : Bien que les styles soient prédéfinis, ils sont souvent hautement personnalisables.</li>
+        </ul>
+        <h3 id="8.3">8.3.CSS Modules</h3>
+        <p>CSS Modules est une technique qui permet d'écrire du CSS qui est importé et utilisé seulement par un composant spécifique, évitant ainsi les problèmes de styles globaux et les collisions de noms.</p>
+        <p>Si vous utilisez Create React App, CSS Modules est déjà configuré pour vous. Il suffit de nommer vos fichiers CSS avec le suffixe .module.css.</p>
+    <div class="exemple">
+        <p class="code">.button {<br>
+            background-color: coral;<br>
+          }br</p>
+        <p class="code">
+            import React from 'react';<br>
+            import styles from './Button.module.css';<br>
+            <br>
+            function Button() {<br>
+            return &ltbutton className={styles.button}&gtCliquez-moi&lt/button&gt;<br>
+}<br>
+
+        </p>
+    </div>
+    <p>Les avantages des CSS Modules :</p>
+    <ul>
+        <li>Portée locale : Chaque classe CSS est spécifique au module, ce qui élimine les conflits.</li>
+        <li>Réutilisation : Facilite la réutilisation des composants sans se soucier des styles globaux.</li>
+        <li>Simplicité : Pas de bibliothèque supplémentaire nécessaire, c'est une fonctionnalité native du bundler.</li>
+    </ul>
+
+    <p>Le style est un aspect crucial de toute application web, et React offre un large éventail d'options pour styliser vos composants. Qu'il s'agisse d'approches traditionnelles basées sur CSS ou de méthodes modernes comme CSS-in-JS, vous avez le choix des outils et des techniques qui correspondent le mieux à vos besoins et à votre flux de travail.</p>
+    <h2 id="9">9. **Tests et déploiement**</h2>
+    <p>La phase de développement n'est que la première étape de la vie d'une application. Tester et déployer correctement votre application sont des étapes cruciales pour garantir la stabilité, la performance et la disponibilité de votre application pour vos utilisateurs.</p>
+        <h3 id="9.1">9.1.Introduction aux tests avec Jest et React Testing Library</h3>
+        <p>Jest est un framework de tests JavaScript très populaire. Associé à React Testing Library, il offre un ensemble puissant d'outils pour tester les applications React de manière efficace et intuitive.</p>
+        <p>Installation :Si vous utilisez Create React App, Jest est déjà configuré pour vous. Sinon :</p>
+        <div class="commande">npm install --save-dev jest @testing-library/react @testing-library/jest-dom
+        </div>
+        <p>Écrire un test simple :Supposons que vous ayez un composant Greeting qui affiche un message de bienvenue :</p>
+        <div class="exemple">
+            <p class="code">
+                function Greeting(props) { <br>
+                    return &lth1&ltBonjour, {props.name}!&lt/h1&lt; <br>
+                  } <br>
+                  
+            </p>
+        </div>
+        <p>Votre test pourrait ressembler à ceci :</p>
+        <div class="exemple">
+            <p class="code">
+                import { render, screen } from '@testing-library/react';<br>
+                import Greeting from './Greeting';<br>
+                <br>
+                test('affiche un message de bienvenue', () => {<br>
+                render(&ltGreeting name="Alice" /&gt);<br>
+                const linkElement = screen.getByText(/Bonjour, Alice!/i);<br>
+                expect(linkElement).toBeInTheDocument();<br>
+                });<br>
+            </p>
+        </div>
+        <h3 id="9.2">9.2. Mocks et simulation d'événements</h3>
+        <p>Mocks : Dans le monde des tests, il est souvent utile de "simuler" certaines parties de votre application pour isoler le comportement que vous testez. Avec Jest, vous pouvez facilement "se moquer" (mock) de modules ou de fonctions.</p>
+        <h3 id="9.3">9.3. Déploiement d'une application React (Netlify, Vercel, etc.)</h3>
+        <p>Après avoir testé votre application, il est temps de la déployer.</p>
+        <ol>
+            <h4>Netlify </h4>
+            <li>Connectez-vous à Netlify et liez votre repo GitHub (ou autre fournisseur Git).</li>
+            <li>Cliquez sur "New site from Git" et suivez les étapes.</li>
+            <li>Spécifiez npm run build comme commande de build et build/ comme dossier de publication.</li>
+            <li>Netlify déploiera automatiquement votre site à chaque push vers le repo.</li>
+        </ol>
+        <ol>
+            <h4>Vercel </h4>
+                <li>Connectez-vous à Vercel et importez votre projet.</li>
+                <li>Suivez les instructions pour lier votre repo.</li>
+                <li>Vercel reconnaît automatiquement les projets React et configure le processus de build pour vous.</li>
+                <li>Tout comme Netlify, chaque push déclenchera un nouveau déploiement.</li>
+            
+        </ol>
+
+        <p>Tester et déployer une application sont deux aspects cruciaux du cycle de développement. En utilisant des outils et des services modernes, vous pouvez vous assurer que votre application React est robuste, fiable et accessible à tous vos utilisateurs, où qu'ils soient.
+
+
+
+
+        </p>
+    <h2 id="10">10. **Bonnes pratiques et performances**</h2>
+    <p>Une application React bien conçue ne se limite pas à la fonctionnalité. La lisibilité du code, les bonnes pratiques de programmation et l'optimisation des performances sont essentielles pour créer des applications efficaces, maintenables et évolutives.</p>
+        <h3 id="10.1">10.1. Optimisation des performances (React.memo, useMemo, etc.)</h3>
+        <p>
+            React.memo : Il s'agit d'une technique de mémorisation pour les composants fonctionnels. Si vos composants se rendent inutilement en raison de rendus fréquents non nécessaires, React.memo peut aider à optimiser ce rendu en ne réexécutant le rendu que si les props du composant ont changé.
+        </p>
+
+        <div class="exemple">
+            <p class="code">
+                const MyComponent = React.memo(function MyComponent(props) {<br>
+                    // Le composant <br>
+                  });<br>
+            </p>
+        </div>
+
+        <p>
+            useMemo : C'est un hook qui mémorise une valeur calculée coûteuse. Plutôt que de recalculer cette valeur à chaque rendu, vous pouvez l'utiliser pour mémoriser le résultat et ne le recalculer que lorsque les dépendances spécifiques changent.
+        </p>
+
+        <div class="exemple">
+            <p class="code">
+               const computedValue = useMemo(() =&gt {<br>
+                      // une fonction coûteuse <br>
+                 }, [dependencies]);<br>
+            </p>
+        </div>
+
+        <h3 id="10.2">10.1 Conseils de codage et bonnes pratiques</h3>
+
+        <ul>
+            <li>Décomposition : Essayez de décomposer vos composants en petites parties réutilisables. Cela facilite la maintenance et améliore la lisibilité.</li>
+            <li>État unique de vérité : Minimisez les sources de vérité dans votre application. Utilisez des outils comme Redux ou React Context pour centraliser l'état.</li>
+            <li>Evitez les fonctions inline : Les fonctions créées dans le rendu d'un composant peuvent causer des rendus inutiles. Si possible, utilisez useCallback ou définissez la fonction en dehors du composant.</li>
+            <li>Immutabilité : Lors de la manipulation des états, en particulier des objets ou des tableaux, créez toujours une nouvelle copie au lieu de modifier l'original.</li>
+        </ul>
+        <h3 id="10.3">10.2 Analyse des performances avec les outils de développement React</h3>
+        <p>
+            Les DevTools de React sont des extensions pour les navigateurs Chrome et Firefox qui vous permettent d'inspecter une hiérarchie de composants React, d'observer leur état et leurs props, et de profilier leurs performances.
+        </p>
+
+        <ol>
+            <h4>Profiler </h4>
+            <p>Le profileur mesure le temps qu'il faut pour rendre les composants et vous aide à identifier les goulots d'étranglement ou les composants qui rendent trop souvent. Pour l'utiliser :</p>
+            <li>Installez et ouvrez les DevTools de React.</li>
+            <li>Cliquez sur l'onglet "Profiler".</li>
+            <li>Enregistrez une session de profilage pendant que vous interagissez avec votre application.</li>
+            <li>Examinez les résultats pour voir quels composants prennent le plus de temps à rendre et pourquoi.</li>
+
+            <p>Les performances ne concernent pas seulement la vitesse, mais aussi l'efficacité et la fluidité de l'expérience utilisateur. En combinant une bonne architecture, des bonnes pratiques de codage et l'utilisation judicieuse des outils d'optimisation et de profilage, vous pouvez garantir que votre application React est à la fois performante et agréable pour vos utilisateurs.</p>
+        </ol>
+    <h2 id="11">11. **Écosystème et ressources**</h2>
+        <p>L'univers de React est vaste et en constante évolution. La communauté autour de React est active et passionnée, produisant continuellement des bibliothèques, des outils et des ressources pour aider les développeurs à construire des applications de qualité. Découvrons certains des joyaux de cet écosystème.</p>
+
+            <h3 id="11.1">11.1. Bibliothèques complémentaires populaires (Formik, Axios, etc.)</h3>
+            <ol>
+                <li>Formik : C'est une bibliothèque pour construire des formulaires dans React. Elle simplifie la gestion des données, la validation et les erreurs des formulaires, en offrant une API cohérente et performante.</li>
+                <li>Axios : Bien que les navigateurs fournissent l'API Fetch pour effectuer des requêtes HTTP, Axios est une bibliothèque de client HTTP populaire qui rend les appels HTTP plus simples et plus intuitifs, avec des fonctionnalités telles que l'annulation de requêtes et la progression des téléchargements.</li>
+                <li>Recoil : C'est une bibliothèque de gestion d'état pour React. Elle offre une approche plus fine et flexible pour gérer l'état global comparée à Redux.</li>
+                <li>react-query : Cette bibliothèque simplifie la récupération, la mise en cache, la synchronisation et la mise à jour des données asynchrones dans les applications React.</li>
+            </ol>
+            <h3 id="11.2">11.2.Outils de développement (Extensions navigateur, outils de debugging)</h3>
+            <ol>
+                <li>React DevTools : C'est une extension pour Chrome et Firefox qui permet d'inspecter, de profiler et de déboguer les applications React. C'est un incontournable pour tout développeur React.</li>
+                <li>Redux DevTools : Si vous utilisez Redux pour la gestion d'état, cette extension de navigateur vous permet de visualiser, de suivre et de manipuler l'état de votre application en temps réel.</li>
+                <li>ESLint avec le plugin React : ESLint est un linter JavaScript qui, avec son plugin React, vous aide à suivre les meilleures pratiques et à éviter les erreurs courantes lorsque vous écrivez du code React.</li>
+            </ol>
+            <h3 id="11.3">11.3. Ressources pour rester à jour</h3>
+            <ul>
+                <li>Le blog officiel de React : C'est ici que l'équipe de React annonce les nouvelles versions, les fonctionnalités et les changements importants.</li>
+                <li>Reactiflux : Une communauté Discord où les développeurs React se réunissent pour discuter, poser des questions et partager des ressources.</li>
+                <li>Conférences et Meetups : Les événements tels que React Europe, React Conf et de nombreux meetups locaux sont d'excellentes occasions de se familiariser avec les dernières tendances, d'apprendre de cas d'utilisation réels et de réseauter avec d'autres développeurs.</li>
+                <li>Awesome React : Une collection sur GitHub de tutoriels, de bibliothèques et de ressources diverses liées à React.</li>
+            </ul>
+
+        <h2 id="12">12. Conseils supplémentaires</h2>
+        <ol>
+            <li>Intégration avec les autres technologies : Il serait intéressant d'explorer comment React s'intègre avec d'autres bibliothèques et cadres, tels que D3 pour la visualisation de données ou des systèmes de gestion de contenu comme WordPress ou Drupal.</li>
+            <li>Gestion d'erreur : Dans toute application réelle, la gestion des erreurs est cruciale. L'utilisation de composants d'erreur frontière (Error Boundaries) en React pour attraper et gérer les erreurs serait un ajout précieux.</li>
+            <li>Server Side Rendering (SSR) : Expliquer comment le SSR fonctionne avec React pour améliorer les performances initiales de la page et le SEO est important, notamment avec des cadres comme Next.js.</li>
+            <li>Optimisation avancée : Alors que nous avons abordé quelques techniques d'optimisation, il y a d'autres méthodes plus avancées comme le Lazy Loading, le code splitting, et l'analyse de bundle avec des outils comme Webpack Bundle Analyzer.</li>
+            <li>Sécurité : La sécurité est un autre domaine vital. Discuter des meilleures pratiques pour sécuriser les applications React, y compris l'atténuation des attaques XSS, serait très bénéfique.</li>
+        </ol>
+
+        <ul>
+            <li>Ne réinventez pas la roue : Avant d'écrire du code à partir de zéro, explorez l'écosystème pour voir s'il existe déjà une solution ou une bibliothèque qui répond à vos besoins.</li>
+            <li>Apprendre par la pratique : Si vous débutez avec React, essayez de construire des projets réels, même s'ils sont petits. Cela solidifiera votre compréhension.</li>
+            <li>Engagez-vous dans la communauté : La communauté React est vaste et accueillante. Participez aux forums, assistez aux conférences et contribuez aux projets open source si vous le pouvez.</li>
+        </ul>
+
+</div>
+
+<footer>
+    <p>Informations du cours générés par Intelligence Artificiel Open Ai Chat GPT v4. </p>
+    <p>Contactez moi: Mazo.prod@gmail.com</p>
+    
+</footer>
+
+
+</body>
+</html>

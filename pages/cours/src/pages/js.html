@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Javascript</title>
+</head>
+<body>
+    <header>
+        <a href="../../../../index.html"><div class="logo"><img src="../logo.png" alt="logo_du_site"></div></a>
+        <nav class="navigation">
+            <a href="../pages/html.html">HTML</a>
+            <a href="../pages/css.html">CSS</a>
+            <a href="../pages/js.html" class="active">JavaScript</a>
+            <a href="../pages/php.html">PHP</a>
+            <a href="../pages/react.html">React</a>
+            <a href="../pages/git.html">Git&Github</a>
+
+            <a href="../../index.html">retour</a>
+        </nav>  
+    </header>
+    
+        <div class="sommaire">
+            <h1>Cours de Javascript</h1>
+            <a href="#0">Cours de JavaScript</a><br>
+            <a href="#1">1.Introduction à JavaScript</a><br>
+            <a href="#1.1">1.1 Origines et histoire</a><br>
+            <a href="#1.2">1.2 Pourquoi utiliser JavaScript ?</a><br>
+            <a href="#1.3">1.3 Environnement de développement</a><br>
+
+            <a href="#2">2.Syntaxe de base</a><br>
+            <a href="#2.1">2.1 Variables et types de données</a><br>
+            <a href="#2.2">2.2 Opérateurs</a><br>
+            <a href="#2.3">2.3 Structures de contrôle (conditions, boucles)</a><br>
+
+            <a href="#3">3.Fonctions</a><br>
+            <a href="#3.1">3.1 Définition et utilisation</a><br>
+            <a href="#3.2">3.2 Portée des variables</a><br>
+            <a href="#3.3">3.3 Fonctions anonymes et fléchées</a><br>
+
+            <a href="#4">4.Objets et Tableaux</a><br>
+            <a href="#4.1">4.1 Création et manipulation</a><br>
+            <a href="#4.2">4.2 Méthodes d'objets</a><br>
+            <a href="#4.3">4.3 Les tableaux et leurs méthodes</a><br>
+
+            <a href="#5">5.JavaScript et le navigateur web</a><br>
+            <a href="#5.1">5.1 Le Document Object Model (DOM)</a><br>
+            <a href="#5.2">5.2 Manipulation du DOM</a><br>
+            <a href="#5.3">5.3 Gestion des événements</a><br>
+
+            <a href="#6">6.JavaScript avancé</a><br>
+            <a href="#6.1">6.1 Fonctions de rappel (callback) et Promesses</a><br>
+            <a href="#6.2">6.2 Asynchronous JavaScript (async/await)</a><br>
+            <a href="#6.3">6.3 Closures et IIFE</a><br>
+
+            <a href="#7">7.Programmation orientée objet en JavaScript</a><br>
+            <a href="#7.1">7.1 Classes et héritage</a><br>
+            <a href="#7.2">7.2 Prototypes</a><br>
+            <a href="#7.3">7.3 ES6 et au-delà</a><br>
+
+            <a href="#8">8.Gestion des erreurs et débogage</a><br>
+            <a href="#8.1">8.1 Les erreurs communes</a><br>
+            <a href="#8.2">8.2 Utilisation des outils de débogage</a><br>
+            <a href="#8.3">8.3 Bonnes pratiques pour éviter les erreurs</a><br>
+
+            <a href="#9">9.Utilisation de bibliothèques et de frameworks JavaScript</a><br>
+            <a href="#9.1">9.1 Introduction à jQuery</a><br>
+            <a href="#9.2">9.2 Introduction à React.js</a><br>
+            <a href="#9.3">9.3 Introduction à Node.js</a><br>
+
+            <a href="#10">10.Tests et déploiement</a><br>
+            <a href="#10.1">10.1 Écriture de tests unitaires avec Jest</a><br>
+            <a href="#10.2">10.2 Automatisation des tests</a><br>            
+            <a href="#10.3">10.3 Déploiement sur un serveur</a><br>
+
+            <a href="#11">11.Projets pratiques</a><br>
+            <a href="#11.1">11.1 Application de gestion de tâches (ToDo)</a><br>
+            <a href="#11.2">11.2 Mini-jeu en JavaScript</a><br>
+            <a href="#11.3">11.3 Application CRUD avec Node.js</a><br>
+
+            <a href="#12">12.Conclusion et perspectives</a><br>
+            <a href="#12.1">12.1 Conseils pour continuer à apprendre</a><br>
+            <a href="#12.2">12.2 Veille technologique</a><br>
+
+            <a href="#13">13.Développement de carrière en JavaScript</a><br>          
+
+        </div>
+   
+<div class="cours">
+    <h1 id="0">Cours Js</h1>
+
+    <!-- 1.Introduction à JavaScript -->
+<h2 id="1">1.Introduction à JavaScript</h2>
+    <h3 id="1.1">1.1 Origines et histoire</h3>
+        <p>JavaScript a été créé par Brendan Eich en 1995 alors qu'il travaillait chez Netscape Communications. À l'origine, le langage était connu sous le nom de Mocha, puis renommé LiveScript, avant de finalement adopter le nom JavaScript. La décision de ce nom était en grande partie marketing, pour capitaliser sur la popularité du langage Java à l'époque.</p>
+        <p>Il est important de noter que malgré leur nom similaire, Java et JavaScript sont deux langages très différents. JavaScript a été conçu pour être un langage de script pour le web, permettant d'ajouter de l'interactivité aux sites web.</p>
+        <p>En 1997, JavaScript a été standardisé par l'ECMA International, une association de normalisation pour les systèmes d'information et de communication. Depuis lors, le langage a évolué, avec l'introduction de nombreuses nouvelles fonctionnalités et l'émergence de plusieurs frameworks et bibliothèques pour faciliter le développement en JavaScript.</p>
+    <h3 id="1.2">1.2 Pourquoi utiliser JavaScript ?</h3>
+        <p>JavaScript est devenu un langage incontournable pour le développement web. Il est utilisé pour rendre les pages web interactives et dynamiques. Qu'il s'agisse de valider des formulaires, de créer des animations, ou de charger du contenu de manière asynchrone, JavaScript est à la base de presque toutes les interactions sur le web moderne.</p>
+        <p>Au-delà du navigateur, JavaScript a également trouvé sa place sur le serveur avec Node.js, un environnement d'exécution qui permet d'utiliser JavaScript pour créer des applications serveur. Avec JavaScript, vous pouvez donc créer des applications web complètes, du frontend au backend.</p>
+        <p>En outre, la popularité de JavaScript signifie qu'il y a une grande communauté de développeurs, une multitude de ressources pour apprendre et de nombreuses opportunités d'emploi</p>
+    <h3 id="1.3">1.3 Environnement de développement</h3>
+        <p>Pour commencer à coder en JavaScript, vous n'avez besoin que d'un navigateur web et d'un éditeur de texte. Le navigateur exécute votre code JavaScript, tandis que l'éditeur de texte vous permet de l'écrire. Cela peut être aussi simple que Notepad, mais des éditeurs spécialisés comme Visual Studio Code, Atom ou Sublime Text offrent de nombreuses fonctionnalités qui facilitent la vie du développeur.</p>
+        <p>Pour un développement plus avancé, vous voudrez peut-être configurer un environnement de développement plus robuste. Cela peut inclure un serveur local pour tester votre code, un débogueur pour vous aider à résoudre les problèmes, et peut-être un système de gestion de versions comme Git pour suivre vos modifications.</p>
+        <p>Pour le développement côté serveur avec Node.js, vous aurez également besoin d'installer Node.js et un gestionnaire de paquets comme npm ou yarn.</p>
+
+    <!-- 2.Syntaxe de base -->
+<h2 id="2">2.Syntaxe de base</h2>
+    <h3 id="2.1">2.1 Variables et types de données</h3>
+        <p>Une variable est un conteneur pour stocker une valeur. En JavaScript, nous déclarons une variable en utilisant les mots-clés var, let ou const. Par exemple :</p>
+        <div class="exemple">
+            <p class="code">
+                let name = 'John';<br>
+               const age = 25;<br>
+            </p>
+        </div>
+
+        <p>Le choix entre var, let et const dépend de comment et où vous souhaitez utiliser la variable.</p>
+        <p>JavaScript est un langage à typage dynamique, ce qui signifie que le type de données d'une variable peut changer au fil du temps. Les types de données de base en JavaScript sont :</p>
+        <ul>
+            <li>Number : pour les nombres, par exemple : const age = 25;</li>
+            <li>String : pour les textes, par exemple : let name = 'John';</li>
+            <li>Boolean : pour les valeurs vraies/fausses, par exemple : let isOnline = true;</li>
+            <li>Null : représente l'absence de valeur, par exemple : let something = null;</li>
+            <li>Undefined : signifie qu'une variable a été déclarée mais n'a pas encore été attribuée, par exemple : let test;</li>
+            <li>Object : pour les objets plus complexes, par exemple : let person = {firstName: 'John', lastName: 'Doe'};</li>
+        </ul>
+    <h3 id="2.2">2.2 Opérateurs</h3>
+        <p>JavaScript comprend un certain nombre d'opérateurs qui permettent de manipuler des valeurs. Les principaux types d'opérateurs sont :</p>
+        <ul>
+            <li>Opérateurs arithmétiques : comme +, -, *, /, % (modulo), ++ (incrément), -- (décrément)</li>
+            <li>Opérateurs d'affectation : comme =, +=, -=, *=, /=</li>
+            <li>Opérateurs de comparaison : comme == (égalité), != (non égalité), === (égalité stricte), !== (non égalité stricte), > (supérieur à), < (inférieur à), >= (supérieur ou égal), <= (inférieur ou égal)</li>
+            <li>Opérateurs logiques : comme && (et), || (ou), ! (non)</li>
+        </ul>
+
+
+    <h3 id="2.3">2.3 Structures de contrôle (conditions, boucles)</h3>
+        <p>JavaScript offre plusieurs structures de contrôle pour aider à gérer le flux du programme.</p>
+        <ul>
+            <li>
+                <p>Instructions conditionnelles : Elles permettent d'exécuter différents blocs de code en fonction de conditions spécifiques. Les structures de contrôle conditionnelles comprennent if, else if, else, et switch.</p>
+                <div class="exemple">
+                    <p class="code">
+                        if (age >= 18) {<br>
+                            console.log('Vous pouvez voter.');<br>
+                        } else {<br>
+                            console.log('Vous ne pouvez pas voter.');<br>
+                        }<br>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <p>Boucles : Elles permettent de répéter un bloc de code plusieurs fois. Les principales structures de boucles en JavaScript sont for, while, et do...while.</p>
+                <div class="exemple">
+                    <p class="code">
+                        for (let i = 0; i < 10; i++) {<br>
+                            console.log(i);<br>
+                        }<br>
+                    </p>
+                </div>
+            </li>
+        </ul>
+
+    <!-- 3.Fonctions -->
+<h2 id="3">3.Fonctions</h2>
+    <h3 id="3.1">3.1 Définition et utilisation</h3>
+        <p>Une fonction est un bloc de code conçu pour effectuer une tâche particulière. Une fonction est exécutée lorsque quelque chose l'invoque (l'appelle). Pour définir une fonction en JavaScript, on utilise le mot-clé function suivi du nom de la fonction, de parenthèses () qui peuvent contenir des paramètres et d'accolades {} qui contiennent le corps de la fonction. Voici un exemple :</p>
+        <div class="exemple">
+            <p class="code">
+                function greet(name) {<br>
+                    console.log("Bonjour, " + name);<br>
+                  }<br>
+                  <br>
+                  greet("Alice");  // Affiche : Bonjour, Alice<br>
+            </p>
+        </div>
+
+    <h3 id="3.2">3.2 Portée des variables</h3>
+        <p>La portée d'une variable désigne la partie du code où cette variable peut être référencée ou accédée.</p>
+        <ul>
+            <li>Une variable déclarée à l'extérieur d'une fonction a une portée globale. Cela signifie qu'elle peut être utilisée n'importe où dans le code, y compris à l'intérieur des fonctions.</li>
+            <li>Une variable déclarée à l'intérieur d'une fonction a une portée locale. Cela signifie qu'elle ne peut être utilisée qu'à l'intérieur de cette fonction.</li>
+            <li>Les variables déclarées avec let ou const ont également une portée de bloc, ce qui signifie qu'elles ne sont accessibles qu'à l'intérieur du bloc de code où elles ont été déclarées.</li>
+        </ul>
+
+        <div class="exemple">
+            <p class="code">
+                let globalVar = "Je suis globale"; <br>
+                        function myFunction() {<br>
+                        let localVar = "Je suis locale";<br>
+                        console.log(globalVar); // Peut accéder à la variable globale<br>
+                        console.log(localVar);  // Peut accéder à la variable locale<br>
+                        }<br>
+                        <br>
+                        myFunction();<br>
+                        <br>
+                        console.log(globalVar); // Peut accéder à la variable globale<br>
+                        console.log(localVar);  // Erreur : localVar n'est pas défini<br>
+            </p>
+        </div>
+
+    <h3 id="3.3">3.3 Fonctions anonymes et fléchées</h3>
+        <ul>
+            <li>
+                <p>Une fonction anonyme est une fonction sans nom. Ces fonctions sont souvent utilisées comme arguments d'autres fonctions ou comme méthodes d'objets.</p>
+                <div class="exemple">
+                    <p class="code">
+                        let sayHello = function() {<br>
+                            console.log("Bonjour !");<br>
+                          };<br>
+                          
+                          sayHello();  // Affiche : Bonjour !<br>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <p>Les fonctions fléchées sont une syntaxe plus courte pour définir une fonction. Elles ont été introduites avec ES6 (ES2015) et offrent quelques avantages par rapport aux fonctions traditionnelles, notamment une syntaxe plus concise et le fait qu'elles n'ont pas leur propre contexte this.</p>
+                <div class="exemple">
+                    <p class="code">
+                        let sayHello = () => {<br>
+                            console.log("Bonjour !");<br>
+                          };<br>
+                          <br>
+                          sayHello();  // Affiche : Bonjour !<br>
+                    </p>
+                </div>
+            </li>
+        </ul>
+
+    <!-- 4.Objets et Tableaux -->
+<h2 id="4">4.Objets et Tableaux</h2>
+    <h3 id="4.1">4.1 Création et manipulation</h3>
+        <ul>
+            <li>
+                <p>Objets : Un objet est une collection de paires clé-valeur. Les clés sont appelées propriétés et peuvent référencer des valeurs de tout type, y compris d'autres objets ou des fonctions. Voici comment vous pouvez créer et manipuler un objet :</p>
+                <div class="exemple">
+                    <p class="code">
+                        let person = {<br>
+                            firstName: 'John',<br>
+                            lastName: 'Doe',<br>
+                            age: 25<br>
+                          };<br>
+                          
+                          console.log(person.firstName);  // Affiche : John<br>
+                          
+                          // Ajouter une nouvelle propriété<br>
+                          person.occupation = 'developer';<br>
+                          console.log(person.occupation);  // Affiche : developer<br>
+                          <br>
+                          // Modifier une propriété existante<br>
+                          person.age = 26;<br>
+                          console.log(person.age);  // Affiche : 26<br>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <p>Tableaux : Un tableau est une liste ordonnée de valeurs. En JavaScript, les tableaux sont des objets et peuvent donc contenir des valeurs de tout type. Les indices de tableau commencent à 0.</p>
+                <div class="exemple">
+                    <p class="code">
+                        let fruits = ['apple', 'banana', 'cherry'];<br>
+                        <br>
+                        console.log(fruits[0]);  // Affiche : apple<br>
+                        <br>
+                        // Ajouter un nouvel élément à la fin du tableau<br>
+                        fruits.push('date');<br>
+                        console.log(fruits);  // Affiche : ['apple', 'banana', 'cherry', 'date']<br>
+                        <br>
+                        // Modifier un élément existant<br>
+                        fruits[1] = 'blueberry';<br>
+                        console.log(fruits);  // Affiche : ['apple', 'blueberry', 'cherry', 'date']<br>
+                        <br>
+                    </p>
+                </div>
+            </li>
+        </ul>
+
+    <h3 id="4.2">4.2 Méthodes d'objets</h3>
+        <p>En JavaScript, les fonctions peuvent être stockées en tant que valeurs de propriétés dans les objets. Lorsqu'une fonction est une propriété d'un objet, on l'appelle une méthode.</p>
+        <div class="exemple">
+            <p class="code">
+                let person = {<br>
+                    firstName: 'John',<br>
+                    lastName: 'Doe',<br>
+                    fullName: function() {<br>
+                      return this.firstName + ' ' + this.lastName;<br>
+                    }<br>
+                  };<br>
+                  <br>
+                  console.log(person.fullName());  // Affiche : John Doe<br>
+            </p>
+        </div>
+
+    <h3 id="4.3">4.3 Les tableaux et leurs méthodes</h3>
+        <p>JavaScript offre une large gamme de méthodes pour manipuler les tableaux :</p>
+        <ul>
+            <li>push() : ajoute un ou plusieurs éléments à la fin d'un tableau et renvoie la nouvelle longueur du tableau.</li>
+            <li>pop() : supprime le dernier élément d'un tableau et le renvoie.</li>
+            <li>shift() : supprime le premier élément d'un tableau et le renvoie.</li>
+            <li>unshift() : ajoute un ou plusieurs éléments au début d'un tableau et renvoie la nouvelle longueur du tableau.</li>
+            <li>splice() : change le contenu d'un tableau en supprimant, remplaçant ou ajoutant des éléments.</li>
+            <li>slice() : renvoie une copie superficielle d'une portion de tableau.</li>
+            <li>sort() : trie les éléments d'un tableau en place et renvoie le tableau.</li>
+        </ul>
+
+        <div class="exemple">
+            <p class="code">
+                let fruits = ['apple', 'banana', 'cherry'];<br>
+                <br>
+                fruits.push('date');       // ['apple', 'banana', 'cherry', 'date']<br>
+                fruits.pop();              // ['apple', 'banana', 'cherry']<br>
+                fruits.unshift('kiwi');    // ['kiwi', 'apple', 'banana', 'cherry']<br>
+                fruits.shift();            // ['apple', 'banana', 'cherry']<br>
+                fruits.sort();             // ['apple', 'banana', 'cherry']<br>
+                <br>
+                let slicedFruits = fruits.slice(1, 3); // ['banana', 'cherry']<br>
+            </p>
+        </div>
+
+    <!-- 5.JavaScript et le navigateur web -->
+<h2 id="5">5.JavaScript et le navigateur web</h2>
+    <h3 id="5.1">5.1 Le Document Object Model (DOM)</h3>
+        <p>Le Document Object Model (DOM) est une interface de programmation pour les documents HTML et XML. Il représente la structure d'un document web sous forme d'arbre, ce qui permet aux langages de programmation comme JavaScript de manipuler le contenu, la structure et le style d'un site web.</p>
+        <p>Dans le DOM, chaque élément HTML est représenté par un objet avec des propriétés et des méthodes. Par exemple, dans le DOM, la balise &ltp&gt est un objet qui a des propriétés comme innerHTML et des méthodes comme setAttribute().</p>
+    <h3 id="5.2">5.2 Manipulation du DOM</h3>
+        <p>JavaScript peut manipuler le DOM de plusieurs façons, notamment en ajoutant, modifiant ou supprimant des éléments et des attributs HTML. Voici quelques exemples :</p>
+        <ul>
+            <li>Sélection d'éléments : Vous pouvez sélectionner des éléments HTML en utilisant document.getElementById(), document.getElementsByClassName(), document.getElementsByTagName(), ou document.querySelector().</li>
+            <li>Modification de contenu : Vous pouvez modifier le contenu d'un élément HTML en utilisant la propriété innerHTML. Par exemple, document.getElementById('myId').innerHTML = 'New content';.</li>
+            <li>Modification d'attributs : Vous pouvez modifier les attributs d'un élément HTML en utilisant setAttribute(). Par exemple, document.getElementById('myId').setAttribute('class', 'myClass');.</li>
+        </ul>
+
+    <h3 id="5.3">5.3 Gestion des événements</h3>
+        <p>Un événement est une action qui se produit dans le navigateur. Il peut être déclenché par l'utilisateur (un clic de souris, une frappe de touche, un mouvement de souris, etc.) ou par le navigateur lui-même (la fin du chargement d'une page, un minuteur qui se déclenche, etc.).</p>
+        <p>JavaScript permet de définir des fonctions appelées gestionnaires d'événements qui s'exécutent lorsqu'un événement spécifique se produit. Voici un exemple de gestionnaire d'événements :</p>
+        <div class="exemple">
+            <p class="code">
+                let button = document.getElementById('myButton');<br>
+                button.addEventListener('click', function() {<br>
+                console.log('Le bouton a été cliqué !');<br>
+                });<br>
+            </p>
+            <p class="txt">
+                Dans cet exemple, la fonction est exécutée chaque fois que l'utilisateur clique sur le bouton avec l'ID 'myButton'.
+            </p>
+        </div>
+
+    <!-- 6.JavaScript avancé -->
+<h2 id="6">6.JavaScript avancé</h2>
+    <h3 id="6.1">6.1 Fonctions de rappel (callback) et Promesses</h3>
+        <ul>
+            <li>
+                <p>Fonctions de rappel (Callback) : Une fonction de rappel est une fonction qui est passée en tant qu'argument à une autre fonction, puis invoquée par cette dernière pour accomplir une sorte de routine ou d'action.</p>
+                <div class="exemple">
+                    <p class="code">
+                        function greet(name, callback) {<br>
+                            console.log('Bonjour, ' + name);<br>
+                            callback();<br>
+                          }<br>
+                          <br>
+                          function alertEnd() {<br>
+                            console.log('Fin de la conversation.');<br>
+                          }<br>
+                          <br>
+                          greet('Alice', alertEnd);<br>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <p>Promesses : Une promesse est un objet qui peut renvoyer une valeur dans le futur. Les promesses sont utilisées pour gérer des opérations asynchrones en JavaScript, comme l'exécution d'une requête AJAX. Une promesse peut être dans l'un des trois états : en attente (pending), résolue (fulfilled), ou rejetée (rejected).</p>
+                <div class="exemple">
+                    <p class="code">
+                        let promise = new Promise((resolve, reject) => {<br>
+                            let operation = true;  // Simule une opération réussie<br>
+                            <br>
+                            if(operation) {<br>
+                              resolve('Operation réussie');<br>
+                            } else {<br>
+                              reject('Operation échouée');<br>
+                            }<br>
+                          });<br>
+                          
+                          promise<br>
+                            .then(message => console.log(message))  // 'Operation réussie'<br>
+                            .catch(error => console.log(error));<br>
+                    </p>
+                </div>
+            </li>
+        </ul>
+
+    <h3 id="6.2">6.2 Asynchronous JavaScript (async/await)</h3>
+        <p>async et await sont des extensions de Promises et permettent d'écrire du code asynchrone de manière plus facile à lire et à comprendre. Une fonction async renvoie une Promesse. Le mot-clé await peut seulement être utilisé à l'intérieur d'une fonction async, et fait que l'exécution du code asynchrone se comporte comme si elle était synchrone.</p>
+        <div class="exemple">
+            <p class="code">
+                async function asyncFunction() {<br>
+                    let response = await fetch('https://api.example.com/data');<br>
+                    let data = await response.json();<br>
+                    <br>
+                    console.log(data);<br>
+                  }<br>
+                  <br>
+                  asyncFunction();<br>
+            </p>
+        </div>
+
+    <h3 id="6.3">6.3 Closures et IIFE</h3>
+    <ul>
+        <li>
+            <p>Closures : Un closure est une fonction qui a accès à son propre scope, au scope de la fonction englobante et au scope global. En d'autres termes, un closure est une fonction à l'intérieur d'une autre fonction et a accès aux variables de la fonction parente.</p>
+            <div class="exemple">
+                <p class="code">
+                    function outerFunction(outerVariable) {<br>
+                        return function innerFunction(innerVariable) {<br>
+                          console.log('outerVariable:', outerVariable);<br>
+                          console.log('innerVariable:', innerVariable);<br>
+                        }<br>
+                      }<br>
+                      <br>
+                      let newFunction = outerFunction('outside');<br>
+                      newFunction('inside');  // Logs: 'outerVariable: outside' and 'innerVariable: inside'<br>
+                      
+                </p>
+            </div>
+        </li>
+        <li>
+            <p>IIFE : Une IIFE (Immediately Invoked Function Expression) est une fonction en JavaScript qui est exécutée dès qu'elle est définie. Les IIFE sont souvent utilisées pour éviter d'exposer des variables à la portée globale.</p>
+            <div class="exemple">
+                <p class="code">
+                    (function() {<br>
+                        let temp = 'Variable temporaire';<br>
+                        console.log(temp);<br>
+                      })();  // Logs: 'Variable temporaire'<br>
+                      <br>
+                </p>
+            </div>
+        </li>
+    </ul>
+
+    <!-- 7.Programmation orientée objet en JavaScript -->
+<h2 id="7">7.Programmation orientée objet en JavaScript</h2>
+    <h3 id="7.1">7.1 Classes et héritage</h3>
+        <p>JavaScript est un langage orienté objet qui utilise le prototypage plutôt que les classes dans sa conception originale. Cependant, à partir de ES6, JavaScript a introduit le mot-clé class pour faciliter la création d'objets et l'héritage.</p>
+        <ul>
+            <li>
+                <p>Classes : Une classe est une sorte de modèle pour la création d'objets. Elle encapsule les données et les fonctions qui manipulent ces données.</p>
+                <div class="exemple">
+                    <p class="code">
+                        class Animal {<br>
+                            constructor(name) {<br>
+                              this.name = name;<br>
+                            }<br>
+                            <br>
+                            speak() {<br>
+                              console.log(this.name + ' fait un bruit.');<br>
+                            }<br>
+                          }<br>
+                          <br>
+                          let animal = new Animal('Un animal');<br>
+                          animal.speak();  // Affiche : 'Un animal fait un bruit.'<br>
+                          <br>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <p>Héritage : L'héritage est un principe de la programmation orientée objet qui permet de créer une nouvelle classe à partir d'une classe existante.</p>
+                <div class="exemple">
+                    <p class="code">
+                        class Dog extends Animal {<br>
+                            speak() {<br>
+                              console.log(this.name + ' aboie.');<br>
+                            }<br>
+                          }<br>
+                          <br>
+                          let dog = new Dog('Rex');<br>
+                          dog.speak();  // Affiche : 'Rex aboie.'<br>
+                          <br>
+                    </p>
+                </div>
+            </li>
+        </ul>
+
+    <h3 id="7.2">7.2 Prototypes</h3>
+        <p>Dans JavaScript, chaque objet a une propriété spéciale appelée prototype. Le prototype est aussi un objet, et tous les objets héritent de propriétés et de méthodes de leur prototype.</p>
+        <ul>
+            <li>
+                <p>Héritage de prototype : Lorsque vous essayez d'accéder à une propriété ou à une méthode d'un objet, JavaScript cherche d'abord cette propriété ou méthode sur l'objet lui-même. Si elle ne la trouve pas, elle la cherche sur le prototype de l'objet, et ainsi de suite, jusqu'à ce qu'elle trouve la propriété ou qu'elle atteigne la fin de la chaîne de prototypes.</p>
+                <div class="exemple">
+                    <p class="code">
+                        let animal = {<br>
+                            speaks: true<br>
+                          };<br>
+                          <br>
+                          let dog = Object.create(animal);<br>
+                          console.log(dog.speaks);  // Affiche : true<br>
+                          
+                    </p>
+                </div>
+            </li>
+        </ul>
+
+    <h3 id="7.3">7.3 ES6 et au-delà</h3>
+        <p>ES6, ou ECMAScript 2015, a apporté de nombreux changements à JavaScript, notamment les classes, les modules, les promesses, les flèches et bien d'autres fonctionnalités. Depuis ES6, ECMAScript publie de nouvelles spécifications chaque année, ajoutant de nouvelles fonctionnalités à JavaScript. Voici quelques exemples :</p>
+        <ul>
+            <li>ES7 (2016) : comprend les opérateurs exponentiels et Array.prototype.includes.</li>
+            <li>ES8 (2017) : comprend async/await, Object.values(), Object.entries() et String.prototype.padStart()/padEnd().</li>
+            <li>ES9 (2018) : comprend le Rest/Spread Properties, Promise.finally(), et RegExp improvements.</li>
+            <li>ES10 (2019) : comprend Array.prototype.flat(), Array.prototype.flatMap(), Object.fromEntries(), String.prototype.trimStart()/trimEnd(), et try/catch binding.</li>
+        </ul>
+
+    <!-- 8.Gestion des erreurs et débogage -->
+<h2 id="8">8.Gestion des erreurs et débogage</h2>
+    <h3 id="8.1">8.1 Les erreurs communes</h3>
+        <p>Dans le développement JavaScript, certaines erreurs sont plus communes que d'autres. Voici quelques exemples :</p>
+        <ul>
+            <li>Référence non définie : Cette erreur se produit lorsque vous essayez d'accéder à une variable qui n'a pas été déclarée. Par exemple : console.log(inexistentVar);.</li>
+            <li>TypeError : Cette erreur se produit lorsque vous essayez d'effectuer une opération non valide sur un certain type de données. Par exemple : undefined.split(' ');.</li>
+            <li>Erreur de syntaxe : Cette erreur se produit lorsque JavaScript ne comprend pas la syntaxe du code. Par exemple : const name = 'Alice'';.</li>
+        </ul>
+
+    <h3 id="8.2">8.2 Utilisation des outils de débogage</h3>
+        <p>Les outils de débogage sont essentiels pour comprendre et résoudre les erreurs dans votre code. Voici quelques outils de débogage en JavaScript :</p>
+        <ul>
+            <li>Console de navigateur : Les consoles des navigateurs web modernes, comme Chrome DevTools, Firefox Developer Tools, ou Safari Web Inspector, offrent des outils de débogage puissants. Vous pouvez utiliser console.log(), console.error(), et d'autres méthodes de la console pour afficher des messages de débogage.</li>
+            <li>Breakpoints : Vous pouvez utiliser des points d'arrêt pour arrêter l'exécution du code à un certain point et inspecter les valeurs des variables à ce moment-là.</li>
+            <li>Fonction debugger : La fonction debugger; de JavaScript arrête l'exécution du code et déclenche l'outil de débogage du navigateur, si celui-ci est ouvert.</li>
+        </ul>
+
+    <h3 id="8.3">8.3 Bonnes pratiques pour éviter les erreurs</h3>
+    <ul>
+        <li>Utilisez 'use strict'; : L'instruction 'use strict'; en haut de votre script force JavaScript à être plus strict sur les erreurs, ce qui peut vous aider à les éviter.</li>
+        <li>Revoyez votre code : Passer en revue votre code peut vous aider à détecter les erreurs avant qu'elles ne se produisent. Recherchez les variables non déclarées, les typos, les erreurs de syntaxe, etc.</li>
+        <li>Utilisez des linters : Les linters comme ESLint peuvent analyser votre code pour détecter des erreurs potentielles et des problèmes de style.</li>
+        <li>Testez votre code : Écrivez des tests pour votre code pour vérifier que tout fonctionne comme prévu. Vous pouvez utiliser des cadres de test comme Jest ou Mocha pour cela.</li>
+    </ul>
+
+    <!-- 9.Utilisation de bibliothèques et de frameworks JavaScript -->
+<h2 id="9">9.Utilisation de bibliothèques et de frameworks JavaScript</h2>
+    <h3 id="9.1">9.1 Introduction à jQuery</h3>
+        <p>jQuery est une bibliothèque JavaScript rapide et concise qui simplifie la manipulation du document HTML, la gestion des événements, l'animation et l'interaction Ajax. C'est une excellente bibliothèque pour commencer à améliorer l'interaction utilisateur sans la complexité d'autres frameworks plus lourds.</p>
+
+    <h3 id="9.2">9.2 Introduction à React.js</h3>
+        <p>React.js est une bibliothèque JavaScript pour la construction d'interfaces utilisateur, développée par Facebook. React permet aux développeurs de créer de grandes applications web qui peuvent changer les données, sans recharger la page. L'objectif principal de React est d'être rapide, scalable, et simple. Il fonctionne uniquement sur les interfaces utilisateur dans l'application.</p>
+
+    <h3 id="9.3">9.3 Introduction à Node.js</h3>
+        <p>Node.js est une plateforme logicielle open-source qui utilise le moteur JavaScript V8 de Chrome pour interpréter le code JavaScript côté serveur. Node.js est principalement utilisé pour créer des applications de réseau, comme des serveurs web, en raison de sa capacité à gérer un grand nombre de connexions simultanées avec une grande performance.</p>
+
+
+    <!-- 10.Tests et déploiement -->
+<h2 id="10">10.Tests et déploiement</h2>
+    <h3 id="10.1">10.1 Écriture de tests unitaires avec Jest</h3>
+        <p>Jest est un cadre de test JavaScript populaire qui permet d'écrire des tests unitaires pour votre code. Les tests unitaires vérifient que les parties individuelles (ou unités) de votre code fonctionnent comme prévu.</p>
+        <div class="exemple">
+            <p class="code">
+                // myFunctions.js<br>
+                function add(a, b) {<br>
+                return a + b;<br>
+                }<br>
+                <br>
+                module.exports = add;<br>
+                <br>
+                // myFunctions.test.js<br>
+                const add = require('./myFunctions');<br>
+                <br>
+                test('add 1 + 2 pour obtenir 3', () => {<br>
+                expect(add(1, 2)).toBe(3);<br>
+                });<br>
+            </p>
+        </div>
+        <p>Pour exécuter les tests, vous pouvez utiliser la commande npm test ou yarn test dans votre terminal.</p>
+
+    <h3 id="10.2">10.2 Automatisation des tests</h3>
+        <p>L'automatisation des tests permet de s'assurer que votre code fonctionne correctement après chaque modification. Des outils comme Jenkins, Travis CI, ou GitHub Actions peuvent être utilisés pour exécuter automatiquement vos tests chaque fois que vous soumettez des modifications à votre code.
+
+        </p>
+
+    <h3 id="10.3">10.3 Déploiement sur un serveur</h3>
+        <p>Le déploiement est le processus de mise en ligne de votre application pour qu'elle soit accessible aux utilisateurs. Le processus de déploiement peut varier en fonction de l'infrastructure que vous utilisez. Voici un exemple de processus de déploiement simple avec Node.js et Heroku :</p>
+        <ol>
+            <li>Créez une application sur Heroku.</li>
+            <li>Installez le CLI Heroku sur votre machine.</li>
+            <li>Connectez-vous à Heroku avec heroku login.</li>
+            <li>Initialiser un dépôt Git dans votre projet avec git init.</li>
+            <li>Ajoutez tous vos fichiers à Git avec git add . et commitez vos modifications avec git commit -m "Message de commit".</li>
+            <li>Connectez votre dépôt local à Heroku avec heroku git:remote -a nom-de-votre-application.</li>
+            <li>Déployez votre application sur Heroku avec git push heroku master.</li>
+        </ol>
+        <p>En écrivant des tests pour votre code et en automatisant ces tests, vous pouvez améliorer la qualité de votre code et détecter rapidement les erreurs. Et en apprenant à déployer votre application sur un serveur, vous pouvez rendre votre application accessible aux utilisateurs du monde entier.</p>
+
+    <!-- 11.Projets pratiques -->
+<h2 id="11">11.Projets pratiques</h2>
+    <h3 id="11.1">11.1 Application de gestion de tâches (ToDo)</h3>
+        <p>Une application de gestion des tâches est un bon projet pour commencer à pratiquer vos compétences en JavaScript. Elle peut inclure des fonctionnalités comme ajouter des tâches, les marquer comme terminées et les supprimer.</p>
+
+    <h3 id="11.2">11.2 Mini-jeu en JavaScript</h3>
+        <p>Un mini-jeu peut être un excellent moyen de mettre en pratique et d'améliorer vos compétences en JavaScript. Cela pourrait être aussi simple qu'un jeu de casse-briques, un jeu de serpent, ou un jeu de correspondance de cartes.</p>
+
+    <h3 id="11.3">11.3 Application CRUD avec Node.js</h3>
+        <p>Un projet CRUD (Create, Read, Update, Delete) est un autre excellent moyen de pratiquer vos compétences en JavaScript et Node.js. Cela pourrait être une application de blog, une application de gestion des employés, etc.</p>
+
+    <!-- 12.Conclusion et perspectives -->
+<h2 id="12">12.Conclusion et perspectives</h2>
+    <h3 id="12.1">12.1 Conseils pour continuer à apprendre</h3>
+        <p>Apprendre à programmer avec JavaScript est une aventure continue. Voici quelques conseils pour continuer à apprendre :</p>
+        <ul>
+            <li>Pratiquez régulièrement : La pratique est la clé pour devenir un bon développeur. Continuez à coder, à résoudre des problèmes et à travailler sur des projets.</li>
+            <li>Rejoignez la communauté : Il existe de nombreuses communautés en ligne où vous pouvez poser des questions, partager vos connaissances et apprendre des autres.</li>
+            <li>Apprenez d'autres technologies : Après avoir maîtrisé JavaScript, vous pouvez apprendre d'autres technologies comme TypeScript, Vue.js, Angular, etc.</li>
+        </ul>
+
+    <h3 id="12.2">12.2 Veille technologique</h3>
+         <p>La veille technologique est essentielle dans le domaine du développement web en raison de sa nature en constante évolution. Suivez les blogs, les podcasts, les conférences et les forums dédiés à JavaScript et au développement web pour rester à jour.</p>
+
+    <!-- 13.Développement de carrière en JavaScript -->
+<h2 id="13">13.Développement de carrière en JavaScript</h2>
+        <p>JavaScript offre de nombreuses opportunités de carrière. Voici quelques chemins que vous pourriez envisager :</p>
+        <ul>
+            <li>Développeur front-end : Spécialisez-vous dans la création d'interfaces utilisateur interactives avec JavaScript et des frameworks comme React ou Vue.js.</li>
+            <li>Développeur back-end : Utilisez Node.js pour créer des serveurs et des API.</li>
+            <li>Développeur full-stack : Combinez le développement front-end et back-end pour créer des applications complètes.</li>
+            <li>Développeur de jeux : Utilisez JavaScript pour créer des jeux pour le web ou pour les plateformes mobiles.</li>
+        </ul>
+
+
+</div>
+
+<footer>
+    <p>Informations du cours générés par Intelligence Artificiel Open Ai Chat GPT v4. </p>
+    <p>Contactez moi: Mazo.prod@gmail.com</p>
+    
+</footer>
+</body>
+</html>
+

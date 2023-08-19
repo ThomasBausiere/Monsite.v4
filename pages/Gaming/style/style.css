@@ -1,0 +1,194 @@
+/* Globalité de la page */
+
+*{
+    padding: 0 ;
+    margin: 0;
+}
+body{
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+/* header */
+header{
+    position: absolute;
+    bottom:0;
+    left:0;
+    width: 100%;
+    display: flex;
+   
+    justify-content: space-between;
+    align-items: center;
+    z-index:100;
+}
+
+.navigation a{
+    text-decoration: none;
+    color:#f5f1f1c0;
+    padding: 6px 15px;
+    border-radius: 20px;
+    margin:0 10px;
+    font-weight: 600;
+    
+}
+
+
+.navigation a:hover, .navigation a.active{
+    background:#f5f1f1c0;
+    color:#120f14;
+}
+
+header img {
+    float: left;
+    margin: 1rem 1rem;
+    width: 100px;
+    height: auto;
+  }
+
+section .container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color:#120f14;
+    padding: 0;
+    z-index: 98;
+}
+
+/* Personnage */
+/* #carac_01{
+    position:absolute;
+    bottom:0;
+    z-index: 100;
+    max-height: 20rem;
+} */
+
+#carac_02{
+    position:absolute;
+    bottom: 0;
+    z-index: 99;
+    width: 100%;
+} 
+
+.img_fix {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* carrou des BG*/
+
+.carrousel {
+    width: 1456px;
+    height: 816px;
+    overflow: hidden;
+}
+
+.carrousel img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity:0;
+}
+
+.carrousel img:first-child {
+    opacity: 1; 
+}
+
+
+
+/*... le code CSS déjà existant ...*/
+
+/* Pour les tablettes et les petits écrans d'ordinateurs (de 600px à 1200px) */
+@media screen and (min-width: 600px) and (max-width: 1200px) {
+  .navigation a{
+    padding: 5px 10px;
+    font-size: 14px;
+    margin: 0 5px;
+  }
+
+  header img {
+    width: 80px;
+    margin: 0.5rem 0.5rem;
+  }
+
+  .carrousel {
+    width: 100%;
+    height: auto;
+  }
+
+  #carac_02 {
+    width: 100%;
+  }
+}
+
+/* Pour les téléphones mobiles (moins de 600px) */
+@media screen and (max-width: 600px) {
+  .navigation a{
+    padding: 4px 8px;
+    font-size: 12px;
+    margin: 0 3px;
+  }
+
+  header img {
+    width: 60px;
+    margin: 0.5rem 0.5rem;
+  }
+
+  .carrousel {
+    width: 100%;
+    height: auto;
+  }
+
+  #carac_02 {
+    width: 100%;
+  }
+}
+
+
+<!-- HTML !-->
+<button class="button-55" role="button">Button 55</button>
+
+/* CSS */
+.button-55 {
+  align-self: center;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: .75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-55:hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.button-55:focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}

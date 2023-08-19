@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Cours HTML</title>
+</head>
+<body>
+    <header>
+        <a href="../../../../index.html"><div class="logo"><img src="../logo.png" alt="logo_du_site"></div></a>
+        <nav class="navigation">
+            <a href="#" class="active">HTML</a>
+            <a href="../pages/css.html">CSS</a>
+            <a href="../pages/js.html">JavaScript</a>
+            <a href="../pages/php.html">PHP</a>
+            <a href="../pages/react.html">React</a>
+            <a href="../pages/git.html">Git&Github</a>
+
+            <a href="../../index.html">retour</a>
+        </nav>  
+    </header>
+        
+        <div class="sommaire">
+            <h1>Cours de HTML</h1>
+            <a href="#0">Cours de html</a><br>
+            <a href="#1">1. Introduction au HTML</a><br>
+            <a href="#1.1">1.1. Qu'est-ce que le HTML ?</a><br>
+            <a href="#1.2">1.2. Historique et évolution du HTML</a><br>
+            <a href="#1.3">1.3. Rôle du HTML dans le développement web </a><br>
+
+            <a href="#2">2. Bases du HTML </a><br>
+            <a href="#2.1">2.1. Structure de base d'un document HTML<br>
+            <a href="#2.2">2.2. Balises HTML courantes et leurs utilisations </a><br>
+            <a href="#2.3">2.3. Commentaires HTML </a><br>
+            <a href="#2.4">2.4. Les attributs HTML</a><br>
+
+            <a href="#3">3. Formatage de texte en HTML </a><br>
+            <a href="#3.1">3.1. Balises de titres</a><br>
+            <a href="#3.2">3.2. Balises de paragraphe </a><br>
+            <a href="#3.3">3.3. Balises de formatage de texte </a><br>
+            <a href="#3.4">3.4. Listes HTML</a><br>
+
+            <a href="#4">4. Liens et images en HTML  </a><br>
+            <a href="#4.1">4.1. Création de liens </a><br>
+            <a href="#4.2">4.2. Insertion d'images </a><br>
+            <a href="#4.3">4.3. Attributs de liens et d'images<br>
+
+            <a href="#5">5. Tables, Formulaires et iFrames en HTML </a><br>
+            <a href="#5.1">5.1. Création de tables </a><br>
+            <a href="#5.2">5.2. Création de formulaires </a><br>
+            <a href="#5.3">5.3. Utilisation des iFrames</a><br>
+
+            <a href="#6">6. Intégration du CSS et du JavaScript dans le HTML </a><br>
+            <a href="#6.1">6.1. Comment lier une feuille de style CSS à une page HTML </a><br>
+            <a href="#6.2">6.2. Comment intégrer du code JavaScript dans une page HTML</a><br>
+
+            <a href="#7">7. HTML5 et ses nouveautés </a><br>
+            <a href="#7.1">7.1. Nouvelles balises en HTML5 </a><br>
+            <a href="#7.2">7.2. Formulaires HTML5 et nouveaux types de champs </a><br>
+            <a href="#7.3">7.3. APIs HTML5 (Audio, Video, Canvas, etc.)</a><br>
+
+            <a href="#8">8 Bonnes pratiques en HTML  </a><br>
+            <a href="#8.1">8.1. Organisation et indentation du code </a><br>
+            <a href="#8.2">8.2. Accessibilité<br>
+            <a href="#8.3">8.3. SEO et HTML</a><br>
+            
+            <a href="#9">9. Ressources supplémentaires </a><br>
+
+            
+
+
+
+
+
+
+            
+
+
+
+
+
+        </div>
+   
+<div class="cours">
+<h1 id="0">Cours HTML</h1>
+<!-- 1. Introduction au HTML -->
+<h2 id="1">1. Introduction au HTML</h2>
+    <h3 id="1.1">1.1. Qu'est-ce que le HTML ?</h3>
+        <p>HTML, ou HyperText Markup Language, est un langage de balisage utilisé pour structurer le contenu sur le Web. Il définit la signification et la structure du contenu web. Les autres technologies à côté du HTML sont généralement utilisées pour décrire l'apparence/présentation (CSS) ou la fonctionnalité/comportement (JavaScript) d'une page Web.</p>
+    <h3 id="1.2">1.2. Historique et évolution du HTML</h3>
+        <p>HTML a été créé par Tim Berners-Lee en 1991 mais "HTML 2.0" a été la première norme HTML à être publiée en 1995. HTML 4.01 a été une grande version de HTML et elle a été publiée en 1999. L'HTML5 est la dernière version, publiée en octobre 2014 par le W3C.</p>
+    <h3 id="1.3">1.3. Rôle du HTML dans le développement web</h3>
+        <p>HTML joue un rôle clé dans toute application ou site web sur Internet. C'est le squelette de la page, qui donne la structure et place le contenu. Sans HTML, un navigateur web ne saurait pas comment structurer le contenu d'une page web.</p>
+    
+
+<!-- 2. Bases du HTML -->
+<h2 id="2">2. Bases du HTML</h2>
+    <h3 id="2.1">2.1. Structure de base d'un document HTML </h3>
+        <p>Un document HTML de base a une structure spécifique qui comprend les éléments suivants:</p>
+        <ul>
+            <li> &lt!DOCTYPE html&gt  : Cette déclaration doit être la première chose dans votre document HTML. Elle est utilisée pour indiquer au navigateur la version de HTML utilisée, dans ce cas HTML5.        </li>
+            <li> &lthtml&gt : C'est l'élément racine d'une page web.</li>
+            <li> &lthead&gt : Cet élément contient des méta-informations sur le document HTML qui n'est généralement pas visible pour les utilisateurs.</li>
+            <li> &lttitle&gt : Cet élément définit le titre du document, qui est affiché dans la barre de titre du navigateur ou l'onglet de la page.</li>
+            <li> &ltbody&gt : L'élément &ltbody&gt contient le contenu visible d'une page web.</li>
+        </ul>
+    <h3 id="2.2">2.2. Balises HTML courantes et leurs utilisations </h3>
+        <p>Il existe de nombreuses balises HTML, mais voici quelques-unes des plus courantes :</p>
+        <ul>
+            <li> &lth1&gt à &lth6&gt : Ces balises sont utilisées pour définir les titres et sous-titres. &lth1> est le titre le plus important, et < h6> est le moins important.</li>
+            <li> &ltp&gt : Cette balise est utilisée pour définir un paragraphe.</li>
+            <li> &lta&gt : La balise &lta> est utilisée pour créer des liens.</li>
+            <li> &ltimg&gt : Cette balise est utilisée pour insérer des images.</li>
+            <li> &ltul&gt et &ltol&gt : Ces balises sont utilisées pour créer des listes. &ltul&gt pour les listes non ordonnées et &ltol&gt pour les listes ordonnées.</li>
+            <li> &ltli&gt : Cette balise est utilisée pour définir un élément de liste.</li>
+        </ul>
+
+    <h3 id="2.3">2.3. Commentaires HTML </h3>
+        <p>Les commentaires en HTML commencent par &lt!-- et se terminent par --&gt. Ils sont utilisés pour ajouter des notes ou des descriptions dans le code HTML qui ne seront pas rendues par le navigateur. </p>
+        <div class="exemple"> 
+            <p class="code">
+                &lt!-- Ceci est un commentaire --&gt
+
+            </p>
+        </div>
+    <h3 id="2.4">2.4. Les attributs HTML</h3>
+        <p>Les balises HTML peuvent également avoir des attributs. Les attributs fournissent des informations supplémentaires sur les éléments. Ils sont toujours spécifiés dans la balise de départ et viennent généralement par paires sous la forme nom/valeur. Par exemple, l'attribut href pour la balise < a> est utilisé pour spécifier l'URL de la page vers laquelle le lien doit pointer.</p>
+        <div class="exemple">
+            <p class="code"> &lta href="https://www.exemple.com"&gtCeci est un lien&lt/a&gt</p>
+            <p class="txt"> <a href="https://www.exemple.com">Ceci est un lien</a></p>
+        </div>
+        <p>Voici un autre exemple avec l'attribut src (source) pour la balise &ltimg&gt qui est utilisée pour spécifier le chemin de l'image.</p>
+        <div class="exemple">
+            <p class="code">
+                &ltimg src="image.jpg"&gt
+            </p>
+        </div>
+
+<!-- 3. Formatage de texte en HTML  -->
+<h2 id="3">3. Formatage de texte en HTML </h2>
+    <h3 id="3.1">3.1. Balises de titres</h3>
+    <p>En HTML, il existe six niveaux de titres, qui sont représentés par les balises < h1> à < h6>, < h1> étant le niveau de titre le plus élevé (ou le plus important) et < h6> étant le plus bas (ou le moins important).</p>
+    <div class="exemple">
+        <p class="txt">
+            <h1>Ceci est un titre de niveau 1</h1>
+            <h2>Ceci est un titre de niveau 2</h2>
+            <h3>Ceci est un titre de niveau 3</h3>
+            <h6>Ceci est un titre de niveau 6</h6>
+        </p>
+    </div>
+    <h3 id="3.2">3.2. Balises de paragraphe</h3>
+    <p>La balise &ltp&gt en HTML est utilisée pour définir un paragraphe. Le navigateur ajoute automatiquement un espace avant et après chaque élément &ltp&gt.</p>
+    <div class="exemple">
+        <p class="txt">
+            <p>Ceci est un paragraphe. Il contient du texte. Le texte peut être long ou court.</p>
+        </p>
+    </div>
+    <h3 id="3.3">3.3. Balises de formatage de texte</h3>
+    <p>HTML fournit de nombreuses balises pour formater le texte. Voici quelques exemples :</p>
+    <div class="exemple">
+        <p class="txt">
+            <ul>
+                <li> &ltb&gt pour le texte en gras</li>
+                <li> &lti&gt pour le texte en italique</li>
+                <li> &ltu&gt pour le texte souligné</li>
+                <li> &lts&gt pour le texte barré</li>
+                <li> &ltsup&gt pour le texte en exposant</li>
+                <li> &ltsub&gt pour le texte en indice</li>
+                <li> &ltpre&gt pour le texte préformaté</li>
+                <li> &ltcode&gt pour le texte de code informatique</li>
+                <li> &ltblockquote&gt pour une citation longue</li>
+                <li> &ltq&gt pour une citation courte</li>
+            </ul>
+        </p>
+    </div>
+
+    <p>Voici un exemple de comment utiliser ces balises :</p>
+    <div class="exemple">
+        <p class="txt">
+            <p>Ceci est un texte <b>gras</b>, <i>italique</i>, <u>souligné</u> et <s>barré</s>.</p>
+        </p>
+    </div>
+    <div class="exemple">
+        <p class="txt"><p>Ceci est un texte avec <sup>exposant</sup> et <sub>indice</sub>.</p>
+        <pre>Ceci est un texte préformaté</pre>
+        <code>Ceci est un code informatique</code>
+        <blockquote>Ceci est une citation longue</blockquote>
+        <p>Ceci est une citation courte : <q>Citation</q></p></p>
+    </div>
+    <h3 id="3.4">3.4. Listes HTML</h3>
+    <p>Il existe trois types de listes en HTML :</p>
+    <ul>
+        <li>Listes non ordonnées (&ltul&gt), où chaque élément de la liste (&ltli&gt) est marqué d'une puce.</li>
+        <li>Listes ordonnées (&ltol&gt), où chaque élément de la liste est numéroté. </li>
+        <li>Listes de définition (&ltdl&gt, &ltdt&gt, &ltdd&gt), où chaque élément de la liste est composé d'un terme et d'une définition.</li>
+    </ul>
+    <div class="exemple">
+        <p class="txt">
+            <ul>
+                <li>Élément 1</li>
+                <li>Élément 2</li>
+            </ul>
+        </p>
+    </div>
+    <div class="exemple">
+        <p class="txt">
+            <ol>
+                <li>Élément 1</li>
+                <li>Élément 2</li>
+            </ol>
+        </p>
+    </div>
+    <div class="exemple">
+        <p class="txt">
+            <dl>
+                <dt>Terme 1</dt>
+                 <dd>Définition 1</dd>
+                <dt>Terme 2</dt>
+                 <dd>Définition 2</dd>
+            </dl>
+        </p>
+    </div>
+
+<!-- 4. Liens et images en HTML -->
+<h2 id="4">4. Liens et images en HTML</h2>
+
+    <h3 id="4.1">4.1. Création de liens</h3>
+        <p>En HTML, les liens sont définis par la balise &lta&gt. L'attribut href est utilisé pour indiquer la destination du lien.</p>
+        <div class="exemple">
+            <p class="txt"> &lta href="https://www.example.com"&gtCeci est un lien&lt/a&gt</p>
+        </div>
+
+    <h3 id="4.2">4.2. Insertion d'images</h3>
+        <p>La balise &ltimg&gt est utilisée pour insérer une image dans une page HTML. L'attribut src (source) est utilisé pour spécifier le chemin de l'image. Notez que la balise &ltimg&gt est une balise vide, ce qui signifie qu'elle n'a pas de balise de fermeture.</p>
+        <div class="exemple">
+            <p class="txt"> &ltimg src="chemin/vers/image.jpg" alt="Description de l'image"&gt</p>
+        </div>
+        <p>L'attribut alt (alternative) est utilisé pour fournir un texte alternatif pour l'image, au cas où elle ne pourrait pas être affichée. Ce texte aide également à améliorer l'accessibilité pour les personnes qui utilisent des lecteurs d'écran.</p>
+    
+    <h3 id="4.3">4.3. Attributs de liens et d'images</h3>
+        <p>Il existe plusieurs autres attributs que vous pouvez utiliser pour les balises &lta&gt et &ltimg&gt.<br> Pour les liens:</p>
+        <ul>
+            <li>target="_blank" : ouvre le lien dans un nouvel onglet ou une nouvelle fenêtre.</li>
+            
+            <li>title : affiche une info-bulle lorsque le curseur est placé sur le lien.</li>
+        </ul>
+        <p>Pour les images:</p>
+        <ul>
+            <li>width et height : spécifient la largeur et la hauteur de l'image.</li>
+            <li>title : affiche une info-bulle lorsque le curseur est placé sur l'image.</li>
+        </ul>
+        <div class="exemple">
+            <p class="code">
+                &lta href="https://www.example.com" target="_blank" title="Cliquez ici pour visiter example.com"&gtCeci est un lien&lt/a&gt
+            </p>
+        </div>
+        <div class="exemple">
+            <p class="txt">
+                <a href="https://www.example.com" target="_blank" title="Cliquez ici pour visiter example.com">Ceci est un lien</a>
+            </p>
+        </div>
+        <div class="exemple">
+            <p class="code">
+                &ltimg src="chemin/vers/image.jpg" alt="Description de l'image" width="500" height="600" title="Ceci est une image"&gt 
+            </p>
+        </div>
+        <div class="exemple"><p class="txt"><img src="chemin/vers/image.jpg" alt="Description de l'image" width="500" height="600" title="Ceci est une image"> </p></div>
+        
+<!-- 5. Tables, Formulaires et iFrames en HTML -->
+<h2 id="5">5. Tables, Formulaires et iFrames en HTML</h2>
+    <h3 id="5.1">5.1. Création de tables</h3>
+        <p>Les tables en HTML sont définies à l'aide des balises &lttable&gt, &lttr&gt (table row), &ltth&gt (table header) et &lttd&gt (table data).</p>
+        <div class="exemple">
+            <p class="txt"><table>
+                <tr>
+                    <th>En-tête 1</th>
+                    <th>En-tête 2</th>
+                </tr>
+                <tr>
+                    <td>Donnée 1</td>
+                    <td>Donnée 2</td>
+                </tr>
+            </table></p>
+        </div>
+        <div class="exemple">
+            <p class="code">
+                &lttable&gt<br>
+                    &lttr&gt<br>
+                        &ltth&gtEn-tête 1&lt/th&gt<br>
+                        &ltth&gtEn-tête 2&lt/th&gt<br>
+                    &lt/tr&gt<br>
+                    &lttr&gt<br>
+                        &lttd>Donnée 1&lt/td&gt<br>
+                        &lttd>Donnée 2&lt/td&gt<br>
+                    &lt/tr&gt<br>
+                &lt/table&gt<br>
+                
+                </p>
+        </div>
+    <h3 id="5.2">5.2. Création de formulaires</h3>
+        <p>Les formulaires en HTML sont définis à l'aide de la balise &ltform&gt. Un formulaire peut contenir différents types d'éléments de saisie, tels que des champs de texte, des cases à cocher, des boutons radio, des boutons, etc.</p>
+        <div class="exemple">
+            <p class="txt">
+                <form>
+                    <label for="name">Nom:</label><br>
+                    <input type="text" id="name" name="name"><br>
+                    <input type="submit" value="Submit">
+                </form>
+            </p>
+        </div>
+        <div class="exemple">
+            <p class="code">
+                &ltform&gt<br>
+                &ltlabel for="name">Nom:&lt/label&gt<br>
+                &ltinput type="text" id="name" name="name"&gt<br>
+                &ltinput type="submit" value="Submit"&gt<br>
+                &lt/form>
+            </p>
+        </div>
+    <h3 id="5.3">5.3. Utilisation des iFrames</h3>
+        <p>Une iFrame (inline frame) est utilisée pour intégrer une autre page HTML dans une page HTML. Les iFrames sont définies à l'aide de la balise &ltiframe&gt.</p>
+        <div class="exemple">
+            <p class="txt">
+                <iframe src="https://www.example.com" title="Description de l'iFrame"></iframe>
+            </p>
+        </div>
+        <div class="exemple">
+            <p class="code">
+                &ltiframe src="https://www.example.com" title="Description de l'iFrame"&gt&lt/iframe&gt
+            </p>
+        </div>
+        <p>L'attribut src spécifie l'URL de la page à intégrer. L'attribut title fournit un titre pour l'iFrame pour les technologies d'assistance, telles que les lecteurs d'écran.</p>
+        
+        
+<!-- 6. Intégration du CSS et du JavaScript dans le HTML -->
+<h2 id="6">6. Intégration du CSS et du JavaScript dans le HTML </h2>
+
+    <h3 id="6.1">6.1. Comment lier une feuille de style CSS à une page HTML</h3>
+        <p>Pour appliquer des styles CSS à votre page HTML, vous pouvez utiliser une approche externe en créant un fichier séparé avec l'extension .css, puis en le liant à votre fichier HTML.</p>
+        <p>Dans votre fichier HTML, vous pouvez lier le fichier CSS en utilisant la balise &ltlink&gt dans la section &lthead&gt.</p>
+        <p>Notez que href dans la balise &ltlink&gt doit avoir le chemin du fichier CSS que vous avez créé.</p>
+    <h3 id="6.2">6.2. Comment intégrer du code JavaScript dans une page HTML</h3>
+        <p>Il existe deux façons principales d'intégrer du code JavaScript dans votre page HTML :</p>
+        <ol>
+            <li>
+                <h4>Inline JavaScript :</h4>
+            <p>Vous pouvez écrire du code JavaScript directement dans votre document HTML en utilisant la balise &ltscript&gt . Le code JavaScript peut être placé n'importe où, mais il est généralement placé dans la section < head> ou < body>.</p>
+            <div class="exemple">
+                <p class="txt"> &ltbutton onclick=" alert('Bonjour, monde!')"&gtClick me&lt/button&gt</p>
+                <p class="code"> <button onclick=" alert('Bonjour, monde!')">Click </button></p>
+            </div>
+        </li>
+            <li>
+                <h4>External JavaScript :</h4>
+                <p>Similaire à la méthode CSS externe, vous pouvez écrire votre code JavaScript dans un fichier séparé (avec l'extension .js), puis le lier à votre fichier HTML. Pour ce faire, vous utilisez également la balise <'script>, mais cette fois avec l'attribut src qui contient le chemin vers le fichier JavaScript.</p>
+                <div class="exemple">
+                    <p class="txt"> &ltscript src="script.js"&gt &lt/script&gt </p>
+                    
+                </div>
+            </li>
+        </ol>
+
+<!-- 7. HTML5 et ses nouveautés -->
+<h2 id="7">7. HTML5 et ses nouveautés</h2>
+    <p>HTML5 est la dernière version de HTML, elle offre de nouvelles fonctionnalités, de nouvelles balises et améliore la facilité d'utilisation et l'interactivité de l'expérience web.</p>
+    
+    <h3 id="7.1">7.1. Nouvelles balises en HTML5</h3>
+        <p>HTML5 a introduit de nombreuses nouvelles balises pour améliorer la structure et la sémantique des documents web. Parmi celles-ci :</p>
+        <ul>
+            <li> &ltheader&gt, &ltfooter&gt, &ltarticle&gt, &ltsection&gt, &ltaside&gt et &ltnav&gt pour une meilleure structure de page.</li>
+            <li>&ltfigure&gt, &ltfigcaption&gt pour les illustrations et leurs légendes.</li>
+            <li>&lttime&gt pour les dates et heures.</li>
+            <li>&ltmain&gt pour le contenu principal unique d'un document.</li>
+            <li>&ltmark&gt pour le texte souligné.</li>
+        </ul>
+    <h3 id="7.2">7.2. Formulaires HTML5 et nouveaux types de champs</h3>
+        <p>HTML5 a également introduit de nouvelles façons de gérer les formulaires et de nouveaux types de champs pour faciliter l'entrée de données. Par exemple :</p>
+        <ul>
+            <li>Types de champs comme number, date, time, email, url, search, range et color.</li>
+            <li>Attributs de formulaire tels que placeholder, required, autofocus, autocomplete et pattern.</li>
+        </ul>
+    <h3 id="7.3">7.3. APIs HTML5 (Audio, Video, Canvas, etc.)</h3>
+        <p>HTML5 a introduit plusieurs nouvelles API pour enrichir les fonctionnalités web :</p>
+        <ul>
+            <li>API de vidéo et d'audio HTML5 : Avec les balises &ltvideo&gt et &ltaudio&gt, il est désormais facile d'intégrer des médias directement dans vos documents web sans nécessiter de plugin externe.</li>
+            <li>API Canvas : La balise &ltcanvas&gt permet de dessiner des graphiques dynamiques et des images bitmap directement dans le navigateur.</li>
+            <li>API de géolocalisation : Cette API permet aux applications web d'accéder à la position géographique de l'utilisateur, à condition que l'utilisateur donne son accord.</li>
+            <li>API de stockage web : HTML5 introduit le stockage local qui permet de stocker des données de manière plus sécurisée et efficace que les cookies.</li>
+        </ul>
+        <p>Il y a beaucoup plus de nouvelles fonctionnalités et API introduites avec HTML5. Nous allons explorer ces sujets plus en détail dans les leçons suivantes.</p>
+        
+<!-- 8 Bonnes pratiques en HTML -->
+<h2 id="8">8 Bonnes pratiques en HTML</h2>
+    <p>Écrire du code HTML propre et maintenable est essentiel pour tout développeur web. Voici quelques bonnes pratiques pour vous aider à le faire.</p>
+    <h3 id="8.1">8.1. Organisation et indentation du code</h3>
+        <p>Une bonne organisation du code est essentielle pour la lisibilité et la maintenabilité. Chaque élément et chaque bloc de texte doivent être correctement indentés pour montrer clairement la structure de votre document. Cela peut être fait en utilisant une indentation de deux ou quatre espaces, ou une tabulation. Il est également utile d'utiliser des commentaires pour expliquer les parties complexes du code.</p>
+    <h3 id="8.2">8.2. Accessibilité</h3>
+        <p>L'accessibilité est une autre considération importante lors de l'écriture du HTML. Cela signifie que votre site web doit être utilisable par tous, y compris les personnes qui utilisent des technologies d'assistance comme les lecteurs d'écran. Certaines choses à garder à l'esprit comprennent :</p>
+        <ul>
+            <li>Utiliser des balises sémantiques pour décrire le contenu de la page.</li>
+            <li>Fournir du texte alternatif pour les images avec l'attribut alt.</li>
+            <li>Assurez-vous que tous les éléments interactifs peuvent être utilisés avec le clavier.</li>
+        </ul>
+    <h3 id="8.3">8.3. SEO et HTML</h3>
+        <p>Le SEO (Search Engine Optimization) est l'art d'optimiser un site web pour les moteurs de recherche. Certaines bonnes pratiques de SEO en HTML incluent :</p>
+        <ul>
+            <li>Utiliser des balises de titre (&lttitle&gt) et des balises de meta description (&ltmeta name="description"&gt) pour chaque page.</li>
+            <li>Utiliser des balises d'en-tête (&lth1&gt, &lth2&gt, etc.) pour structurer le contenu.</li>
+            <li>Utiliser l'attribut alt pour fournir des descriptions textuelles des images.</li>
+            <li>Fournir un sitemap pour aider les moteurs de recherche à indexer votre site.</li>
+        </ul>
+        <p>En respectant ces bonnes pratiques, vous pouvez assurer que votre code HTML est bien structuré, accessible, et optimisé pour les moteurs de recherche.</p>
+
+<!-- 9. Ressources supplémentaires -->
+<h2 id="9">9. Ressources supplémentaires</h2>
+    <p>Après avoir parcouru ce cours, vous avez maintenant une solide compréhension des bases du HTML, mais il y a toujours plus à apprendre. Voici quelques ressources supplémentaires que vous pouvez utiliser pour approfondir vos connaissances :</p>
+    <ul>
+        <li>Mozilla Developer Network (MDN): Une ressource complète pour les développeurs web, avec de nombreuses documentations et tutoriels sur HTML, CSS, JavaScript et autres.</li>
+        <li>W3Schools: Un autre site web éducatif dédié à l'apprentissage des technologies web.</li>
+        <li>CSS-Tricks: Un site web qui propose des articles, des astuces et des tutoriels sur tout ce qui concerne CSS, y compris certaines utilisations avancées de HTML.</li>
+        <li>Stack Overflow: Une plateforme de questions-réponses où vous pouvez poser des questions spécifiques sur le codage et obtenir des réponses de la communauté.</li>
+
+    </ul>
+    
+
+
+</div>
+</body>
+
+<footer>
+    <p>Informations du cours générés par Intelligence Artificiel Open Ai Chat GPT v4. </p>
+    <p>Contactez moi: Mazo.prod@gmail.com</p>
+    
+</footer>
+</html>

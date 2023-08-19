@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>GIT & Github</title>
+</head>
+<body>
+    <header>
+        <a href="../../../../index.html"><div class="logo"><img src="../logo.png" alt="logo_du_site"></div></a>
+        <nav class="navigation">
+            <a href="../pages/html.html">HTML</a>
+            <a href="../pages/css.html">CSS</a>
+            <a href="../pages/js.html">JavaScript</a>
+            <a href="../pages/php.html">PHP</a>
+            <a href="../pages/react.html" >React</a>
+            <a href="#"class="active">Git&Github</a>
+            <a href="../../index.html">retour</a>
+        </nav>  
+    </header>
+
+    <div class="sommaire">
+        <h1>cours de GIt&Github</h1>
+        <a href="#0">Introduction</a><br>
+    
+        <a href="#1">1. Qu'est-ce que le contrôle de version?</a><br>
+        <a href="#1.1">1.1 Pourquoi le contrôle de version est-il important?</a><br>
+    
+        <a href="#2">2. Historique de Git</a><br>
+        <a href="#2.1">2.1. Origines et développement</a><br>
+        <a href="#2.2">2.2. Pourquoi Git?</a><br>
+    
+        <a href="#3">3. Principes de base de Git</a><br>
+        <a href="#3.1">3.1. Repositories</a><br>
+        <a href="#3.2">3.2. Commits</a><br>
+        <a href="#3.3">3.3. Branches</a><br>
+        <a href="#3.4">3.4. Merge & Rebase</a><br>
+    
+        <a href="#4">4. Installation et Configuration</a><br>
+        <a href="#4.1">4.1. Installation de Git</a><br>
+        <a href="#4.2">4.2. Configuration initiale (username, email)</a><br>
+    
+        <a href="#5">5. Commandes Git essentielles</a><br>
+        <a href="#5.1">5.1. git init, clone</a><br>
+        <a href="#5.2">5.2. git add, commit</a><br>
+        <a href="#5.3">5.3. git push, pull, fetch</a><br>
+        <a href="#5.4">5.4. git branch, checkout</a><br>
+        <a href="#5.5">5.5. git merge, rebase</a><br>
+        <a href="#5.6">5.6. git stash, reset, log</a><br>
+    
+        <a href="#6">6. Travailler avec GitHub</a><br>
+        <a href="#6.1">6.1. Qu'est-ce que GitHub?</a><br>
+        <a href="#6.2">6.2. Création d'un compte et configuration</a><br>
+        <a href="#6.3">6.3. Pusher un repository vers GitHub</a><br>
+        <a href="#6.4">6.4. Cloner un repository depuis GitHub</a><br>
+        <a href="#6.5">6.5. Les Pull Requests</a><br>
+        <a href="#6.6">6.6. La collaboration: Issues, Labels et Milestones</a><br>
+    
+        <a href="#7">7. Bonnes pratiques</a><br>
+        <a href="#7.1">7.1. Messages de commit</a><br>
+        <a href="#7.2">7.2. GitFlow</a><br>
+        <a href="#7.3">7.3. Git hooks</a><br>
+    
+        <a href="#8">8. Résoudre les conflits</a><br>
+        <a href="#8.1">8.1. Qu'est-ce qu'un conflit?</a>             
+        <a href="#8.2">8.2. Identifier un conflit</a>         
+        <a href="#8.3">8.3. Résolution manuelle des conflits</a>
+        <a href="#8.4">8.4. Outils de résolution de conflits</a>
+    
+        <a href="#9">9. Outils annexes et intégrations</a><br>
+        <a href="#9.1">9.1. GUI pour Git</a><br>
+        <a href="#9.2">9.2. Intégration avec des IDE</a><br>
+        <a href="#9.3">9.3. CI/CD avec GitHub Actions</a><br>
+    
+        <a href="#10">10. Conclusion</a><br>
+    
+        <a href="#11">11. Ressources supplémentaires</a><br>
+    </div>
+    <div class="cours">
+        <h1 id="0">Introduction</h1>
+    
+        <h2 id="1">1. Qu'est-ce que le contrôle de version?</h2>
+        <p>Le contrôle de version est un système qui enregistre les modifications apportées à un fichier ou à un ensemble de fichiers au fil du temps. Cela permet de rappeler des versions spécifiques ultérieurement.</p>
+
+        
+        <h3 id="1.1">1.1 Pourquoi le contrôle de version est-il important?</h3>
+        <ol>
+            <li>Permet de revenir à un état précédent.</li>
+            <li>Collaborez avec d'autres développeurs sans écraser le travail de chacun.</li>
+            <li>Suivez et comprenez l'historique du projet.</li>
+        </ol>
+    
+        <h2 id="2">2. Historique de Git</h2>     
+            <h3 id="2.1">2.1. Origines et développement</h3>
+        <p>
+            Git a été initialement conçu et développé par Linus Torvalds pour le développement du noyau Linux. Avant l'introduction de Git, le noyau Linux utilisait un système appelé BitKeeper. Cependant, en raison de restrictions sur l'utilisation gratuite de BitKeeper, la communauté Linux a cherché une alternative. En 2005, Linus a décidé de créer son propre système: Git.
+        </p>
+        <p>
+            Le nom "Git" est d'origine britannique, qui signifie "idiot" ou "stupide". C'était une blague auto-dépréciative de la part de Linus, suggérant que Git n'était qu'un "stupide système de suivi de contenu".
+        </p>
+        <p>
+            L'objectif principal de Git était de créer un outil de contrôle de version qui était:
+            <ol>
+                <li>Rapide : La performance était une préoccupation majeure. Les opérations devraient être effectuées aussi rapidement que possible, même sur des dépôts de grande taille.</li>
+                <li>Distribué : Contrairement à la plupart des autres systèmes de contrôle de version de l'époque qui étaient centralisés, Git est distribué. Cela signifie que chaque développeur possède une copie locale complète du dépôt avec l'historique complet, permettant des opérations sans la nécessité d'une connexion réseau.</li>
+                <li>Support pour le développement non-linéaire : Git a été conçu avec un excellent support pour les branches, permettant un développement parallèle sur plusieurs fonctionnalités.</li>
+            </ol>
+        </p>
+        <p>
+            Au fil des ans, Git a évolué et s'est amélioré grâce aux contributions de nombreux développeurs. Il est aujourd'hui utilisé par des millions de projets à travers le monde.
+        </p>
+        <h3 id="2.2">2.2. Pourquoi Git?</h3>
+        <p>
+            La montée en popularité de Git n'était pas uniquement due à son origine avec le noyau Linux. Voici quelques raisons pour lesquelles Git est devenu le système de contrôle de version préféré pour tant de développeurs:
+        <ol>
+            <li>Performance : Git a été conçu pour être rapide. Cela le rend efficace même avec de grands dépôts et des historiques complexes.</li>
+            <li>Flexibilité : La nature distribuée de Git donne aux développeurs une grande flexibilité. Ils peuvent travailler localement, expérimenter sans risque et seulement partager leurs changements lorsqu'ils sont prêts.</li>
+            <li>Intégrité : Git utilise un mécanisme de cryptage SHA-1 pour garantir l'intégrité des données. Cela signifie qu'il est pratiquement impossible de modifier l'historique des révisions sans que cela ne soit détecté.</li>
+            <li>Branching et fusion simples : Les branches sont au cœur de Git. Cela rend le processus de création, de fusion et de suppression des branches extrêmement simple et rapide.</li>
+            <li>Communauté solide et support : Étant open-source, Git bénéficie d'une grande communauté qui contribue continuellement à son développement, fournit des mises à jour, des corrections de bugs et offre une vaste gamme de ressources pour l'apprentissage.</li>
+        </ol>
+        </p>
+        <p>
+            L'arrivée de plateformes telles que GitHub, GitLab et Bitbucket a également contribué à la popularité de Git, en offrant des outils et services centralisés pour faciliter la collaboration et le partage de code entre développeurs du monde entier.
+        </p>
+    
+        <h2 id="3">3. Principes de base de Git</h2>
+        <p>La maîtrise de Git commence par la compréhension de ses principes fondamentaux. Ces concepts sont les piliers du système de contrôle de version Git, et une fois que vous les maîtrisez, vous trouverez que Git est à la fois puissant et intuitif.</p>
+    
+        <h3 id="3.1">3.1. Repositories</h3>
+        <p>
+            Un dépôt Git, souvent appelé "repo", est un conteneur pour un projet qui suit l'historique des changements du projet. C'est l'endroit où Git garde toutes les métadonnées et les informations nécessaires pour les versions du projet. Il existe deux types principaux de dépôts :
+            <ol>
+                <li>Local Repository : Il s'agit de la version du dépôt qui réside localement sur la machine de l'utilisateur. C'est ici que tous les fichiers, commits, et branches sont stockés.</li>
+                <li>Remote Repository : Il s'agit de la version du dépôt qui est hébergée sur un serveur distant, généralement sur des plateformes comme GitHub, GitLab, ou Bitbucket. C'est l'endroit où les équipes collaborent.</li>
+            </ol>
+        </p>
+
+        <h3 id="3.2">3.2. Commits</h3>
+        <p>
+            Un commit représente une "instantané" de votre projet à un moment donné. Chaque commit est essentiellement une capture de l'état du projet, accompagnée d'un message qui décrit ce qui a été modifié ou ajouté. Pensez-y comme une photo à un moment précis de votre projet.
+        </p>
+        <p>Chaque commit a :
+            <ol>
+                <li>Un identifiant unique (SHA-1 hash) qui le représente.</li>
+                <li>Une référence aux commits parents (habituellement un, mais peut être plusieurs dans le cas d'une fusion).</li>
+                <li>Un message de commit.</li>
+            </ol>
+        </p>
+
+        <p>
+            Le processus typique implique de faire des changements, de "stager" ces changements avec git add, puis de les "commiter" avec git commit.
+        </p>
+        <h3 id="3.3">3.3. Branches</h3>
+        <p>
+            Les branches sont l'une des fonctionnalités les plus puissantes de Git. Elles représentent une ligne de développement indépendante. Pensez à une branche comme une manière d'isoler votre travail. Par exemple, vous pourriez avoir une branche pour développer une nouvelle fonctionnalité, une autre pour corriger un bug, etc.
+       <ol>
+        <li>Master/Main Branch : Il s'agit de la branche par défaut lorsque vous initialisez un dépôt. Elle est généralement utilisée pour représenter la version stable et en production du projet.</li>
+        <li>Feature Branches : Ces branches sont généralement créées pour développer de nouvelles fonctionnalités.</li>
+       </ol>
+        </p>
+    <p>
+        Créer, basculer et fusionner des branches avec Git est un processus facile et rapide.
+    </p>
+        <h3 id="3.4">3.4. Merge & Rebase</h3>
+        <p>Ces deux opérations sont utilisées pour intégrer les changements d'une branche à une autre.
+            <ul>
+                <li>Merge : Prend les commits d'une branche et les intègre sur une autre. Si des changements ont été faits sur les deux branches, Git créera un nouveau "commit de fusion" pour combiner les deux historiques.</li>
+                <li>Rebase : Plutôt que de combiner les commits des deux branches avec un commit de fusion, le rebase prend tous les commits d'une branche et les "rejoue" sur une autre. Cela crée un historique linéaire, mais il faut être prudent avec cette méthode, surtout lorsqu'on travaille sur des branches partagées.</li>
+            </ul>
+        </p>
+    
+        <h2 id="4">4. Installation et Configuration</h2>
+        <p>
+            L'une des premières étapes pour commencer avec Git est de l'installer sur votre machine. Une fois installé, il est essentiel de le configurer correctement pour s'assurer que vos commits reflètent correctement votre identité et pour optimiser votre expérience utilisateur.
+        </p>
+    
+        <h3 id="4.1">4.1. Installation de Git</h3>
+        <p>
+            <h4>Sur windows</h4>
+            <ol>
+                <li>Visitez le site officiel de Git à l'adresse https://git-scm.com/ et téléchargez l'installeur pour Windows.</li>
+                <li>Exécutez le fichier .exe téléchargé.</li>
+                <li>Suivez les instructions à l'écran en utilisant les paramètres par défaut pour la plupart des installations.</li>
+                
+            </ol>
+        </p>
+        <p>
+            <h4>Sur Mac</h4>
+            <ol>
+                <li>Si vous avez installé Homebrew, exécutez la commande : brew install git.</li>
+                <li>Sinon, allez sur https://git-scm.com/ et téléchargez le package macOS, puis suivez les instructions à l'écran.</li>
+            </ol>
+        </p>
+
+        <p>
+            <h4>Sur Linux: Debian/Ubuntu</h4>
+            <ol>
+                <li>Ouvrez un terminal.</li>
+                <li>Exécutez la commande : sudo apt-get update</li>
+                <li>Ensuite : sudo apt-get install git</li>
+            </ol>
+        </p>
+
+        <h4>Sur Linux: Fedora</h4>
+        <ol>
+            <li>Ouvrez un terminal.</li>
+            <li>Exécutez la commande : sudo dnf install git</li>
+            
+        </ol>
+    </p>
+        <h3 id="4.2">4.2. Configuration initiale (username, email)</h3>
+        <p>
+            Une fois Git installé, il est recommandé de définir votre nom d'utilisateur et votre adresse e-mail. Ces informations seront utilisées pour associer vos commits à votre identité.
+        <ol>
+            <li>Définir votre nom : Ouvrez le terminal et tapez :
+                <div class="commande">
+                    git config --global user.name "Votre Nom"
+                </div>
+            </li>
+            <li>Définir votre e-mail : Dans le terminal, tapez :
+                <div class="commande">
+                    git config --global user.email "votre.email@example.com"
+                </div>
+            </li>
+        </ol>
+        </p>
+        <p>
+            Pour vérifier vos configurations :
+            <div class="commande">
+                git config --list
+            </div>
+        </p>
+        <p>
+            Cette commande affichera toutes les configurations de Git, y compris le nom d'utilisateur et l'e-mail que vous venez de définir.
+
+        </p>
+    
+        <h2 id="5">5. Commandes Git essentielles</h2>
+    
+        <p>
+            Git, avec sa flexibilité et sa puissance, a une variété de commandes qui permettent aux développeurs de gérer et de naviguer dans leur historique de code. Chaque commande a son propre but et permet de manipuler le code de différentes manières.
+
+
+        </p>
+    
+        <h3 id="5.1">5.1. git init, clone</h3>
+
+        <ul>
+            <li>
+                git init : Cette commande est utilisée pour initialiser un nouveau dépôt Git. Elle crée un nouveau sous-répertoire .git contenant tous les fichiers nécessaires pour la gestion de version.
+                <div class="commande">
+                    git init
+                </div>
+            </li>
+            <li>
+                git clone : Cette commande est utilisée pour cloner (ou copier) un dépôt à partir d'une adresse existante.
+                <div class="commande">
+                    git clone [url-du-depot]
+                </div>
+            </li>
+        </ul>
+         
+    
+        <h3 id="5.2">5.2. git add, commit</h3>
+         
+        <ul>
+            <li>git add : Elle ajoute des changements dans le répertoire de travail à la zone d'attente. Elle indique à Git que vous voulez inclure les mises à jour de ces fichiers dans le prochain commit.
+                <div class="commande">
+                    git add [nom-du-fichier]
+                </div>
+            </li>
+            <li>
+                git commit : Elle capture l'état actuel de la zone d'attente dans un nouveau commit. Ce commit est ajouté à la branche actuelle.
+                <div class="commande">
+                    git commit -m "Message du commit"
+                </div>
+            </li>
+        </ul>
+
+
+
+    
+        <h3 id="5.3">5.3. git push, pull, fetch</h3>
+        <ul>
+            <li>git push : Elle envoie les commits locaux à la branche principale du dépôt distant.
+                <div class="commande">
+                    git push [nom-du-depot-distant] [nom-de-la-branche]
+
+                </div>
+            </li>
+            <li>git pull : Elle récupère les modifications d'un dépôt distant et les fusionne avec la branche locale.
+                <div class="commande">
+                    git pull [nom-du-depot-distant] [nom-de-la-branche]
+
+                </div>
+            </li>
+            <li>git fetch : Elle récupère les changements d'un dépôt distant, mais contrairement à pull, elle ne fusionne pas ces changements avec la branche actuelle.
+                <div class="commande">
+                    git fetch [nom-du-depot-distant]
+
+                </div>
+            </li>
+        </ul>
+    
+        <h3 id="5.4">5.4. git branch, checkout</h3>
+         
+     <ul>
+            <li>git branch : Elle affiche la liste des branches dans le dépôt et montre la branche actuellement active.
+                <div class="commande">
+                    git branch
+
+                </div>
+            </li>
+            <li>git checkout : Utilisée pour basculer entre différentes branches.
+                <div class="commande">
+                    git checkout [nom-de-la-branche]
+
+                </div>
+            </li>
+        </ul>
+        <h3 id="5.5">5.5. git merge, rebase</h3>
+         
+        <ul>
+            <li>git merge : Elle fusionne les modifications d'une autre branche avec la branche actuelle. Elle est souvent utilisée pour combiner les branches de fonctionnalités avec la branche principale.
+                <div class="commande">
+                    git merge [nom-de-la-branche]
+
+                </div>
+            </li>
+            <li>git rebase : Elle déplace ou combine une séquence de commits vers une nouvelle base de commit. Elle est utilisée pour maintenir un historique propre.
+                <div class="commande">
+                    git rebase [nom-de-la-branche]
+
+                </div>
+            </li>
+
+        </ul>
+    
+        <h3 id="5.6">5.6. git stash, reset, log</h3>
+         
+        <ul>
+            <li>git stash : Elle met temporairement de côté (ou "cache") les modifications que vous avez faites mais que vous ne voulez pas encore commit. C'est utile si vous avez besoin de changer de branche mais que vous ne voulez pas commit vos changements actuels tout de suite.
+                <div class="commande">
+                    git stash
+
+                </div>
+            </li>
+            <li>git reset : Elle réinitialise votre HEAD à l'état spécifié, soit en effaçant des commits, en déplaçant la pointe d'une branche vers un commit particulier, ou en sortant des changements de la zone d'attente.
+                <div class="commande">
+                    git reset --hard [nom-du-commit]
+                </div>
+            </li>
+            <li>git log : Elle affiche l'historique des commits pour la branche actuellement active.
+
+
+                <div class="commande">
+                    git log
+
+                </div>
+            </li>
+        </ul>
+    
+        <h2 id="6">6. Travailler avec GitHub</h2>
+         <p>
+            Alors que Git est un système de contrôle de version permettant de suivre et de gérer les modifications du code, GitHub est une plateforme en ligne qui utilise Git pour la collaboration et la versioning. C'est un lieu où les développeurs peuvent héberger, partager et collaborer sur des projets.
+         </p>
+    
+        <h3 id="6.1">6.1. Qu'est-ce que GitHub?</h3>
+         
+        <p>
+            GitHub est une plateforme de développement collaborative qui facilite le partage et la collaboration sur des projets utilisant Git. C'est non seulement un lieu pour stocker des répertoires publics et privés, mais aussi une plateforme puissante offrant une multitude de fonctionnalités pour les développeurs, telles que la gestion des tâches, la collaboration en équipe et l'intégration continue.
+        </p>
+    
+        <h3 id="6.2">6.2. Création d'un compte et configuration</h3>
+         
+        <ol>
+            <li>
+                
+        <h4>Inscription :</h4>
+        <ul>
+            <li>Visitez https://github.com.</li>
+            <li>Cliquez sur "Sign up" et suivez les instructions pour créer un compte.</li>
+        </ul>
+        </li>
+            <li>
+                
+        <h4>Configuration :</h4>
+        <ul>
+            <li>Une fois inscrit, configurez votre profil. Ajoutez une photo de profil, une bio et d'autres informations pertinentes.</li>
+            <li>Configurer également vos paramètres de notification, de sécurité et de confidentialité selon vos préférences.</li>
+        </ul>
+        </li>
+        </ol>
+    
+        <h3 id="6.3">6.3. Pusher un repository vers GitHub</h3>
+         
+        <ol>
+            <li>Créez un nouveau dépôt sur GitHub en cliquant sur le signe "+" en haut à droite et sélectionnez "New repository".</li>
+            <li>Nommez votre dépôt, ajoutez une description et choisissez entre un dépôt public ou privé.</li>
+            <li>Dans votre terminal ou invite de commande, naviguez vers votre projet Git local.</li>
+            <li>Liez votre dépôt local à votre dépôt GitHub en utilisant la commande :
+                <div class="commande">
+                    git remote add origin [URL-du-depot-GitHub]
+
+                </div>
+            </li>
+            <li>Poussez vos commits vers GitHub avec :
+                <div class="commande">
+                    git push -u origin master
+
+
+                </div>
+            </li>
+        </ol>
+    
+        <h3 id="6.4">6.4. Cloner un repository depuis GitHub</h3>
+         
+        <p>
+            Pour copier un dépôt GitHub sur votre machine locale :
+        </p>
+            <div class="commande">
+                git clone [URL-du-depot-GitHub]
+
+            </div>
+        
+    
+        <h3 id="6.5">6.5. Les Pull Requests</h3>
+
+        <p>Les Pull Requests (PR) sont un mécanisme par lequel un développeur peut demander que les modifications qu'il a apportées soient intégrées (ou "fusionnées") dans une branche principale ou d'autres branches.</p>
+         
+        <ol>
+            <li>Créez une nouvelle branche et effectuez vos modifications.</li>
+            <li>Poussez cette branche sur GitHub.</li>
+            <li>Sur GitHub, cliquez sur "New Pull Request" et choisissez la branche que vous avez poussée.</li>
+            <li>Ajoutez une description détaillée de vos modifications, puis cliquez sur "Create Pull Request".</li>
+            
+        </ol>
+    
+        <h3 id="6.6">6.6. La collaboration: Issues, Labels et Milestones</h3>
+
+        <ul>
+            <li>Issues : Ce sont des propositions, des tâches, des bugs ou des demandes de fonctionnalités qui peuvent être discutées et assignées à des membres spécifiques de l'équipe.</li>
+            <li>Labels : Ils peuvent être ajoutés aux issues ou aux PR pour catégoriser et filtrer rapidement par type, priorité, etc.</li>
+            <li>Milestones : Ce sont des collections d'issues qui correspondent à un projet, une fonctionnalité ou une période de temps. Ils peuvent aider à suivre le progrès et les échéances des tâches.</li>
+        </ul>
+         
+    
+        <h2 id="7">7. Bonnes pratiques</h2>
+         
+        <p>
+            L'utilisation efficace de Git nécessite plus que la simple connaissance des commandes. Adopter de bonnes pratiques peut grandement améliorer la clarté et la maintenabilité de vos projets, tout en facilitant la collaboration avec d'autres développeurs.
+        </p>
+    
+        <h3 id="7.1">7.1. Messages de commit</h3>
+         
+        <p>
+            Des messages de commit clairs et descriptifs sont essentiels pour comprendre l'historique d'un projet. Voici quelques recommandations pour rédiger des messages efficaces :
+        </p>
+    
+        <ol>
+            <li>Utilisez le format présent-titresque : Commencez vos messages par un verbe à l'infinitif comme "ajouter", "corriger" ou "retirer".</li>
+            <li>Limitez la longueur : Le titre de votre commit ne doit pas dépasser 50 caractères. Si une description plus détaillée est nécessaire, laissez une ligne vide après le titre et ajoutez une description plus détaillée en dessous.</li>
+            <li>Soyez précis : Le message doit décrire ce que le commit fait et pourquoi, et non comment il le fait..</li>
+            <li>Évitez les messages vagues comme "corrections diverses".</li>
+        </ol>
+        <h3 id="7.2">7.2. GitFlow</h3>
+         
+        <p>
+            GitFlow est une stratégie de branching qui définit une structure standard pour les branches, facilitant la collaboration et le déploiement.
+        </p>
+    
+        <ol>
+            <li>Master : Cette branche contient le code de production. Chaque commit sur cette branche est une nouvelle version en production.</li>
+            <li>Develop : C'est la branche de développement principale. Les nouvelles fonctionnalités sont fusionnées ici.</li>
+            <li>Feature branches : Ces branches sont créées pour développer de nouvelles fonctionnalités. Une fois terminées, elles sont fusionnées dans la branche 'develop'.</li>
+            <li>Release branches : Prêtes pour la production, elles contiennent des fonctionnalités qui sont testées et prêtes à être fusionnées dans 'master'.</li>
+            <li>Hotfix branches : Utilisées pour appliquer rapidement des correctifs à la production.</li>
+        </ol>
+        <h3 id="7.3">7.3. Git hooks</h3>
+
+        <p>
+            Les hooks Git sont des scripts qui peuvent être exécutés automatiquement à chaque fois qu'un événement spécifique se produit dans un dépôt. Ils sont utiles pour automatiser des tâches telles que le linting, les tests unitaires, ou la mise en forme automatique du code.
+        </p>
+         
+        <ol>
+            <li>Installation : Les hooks résident dans le répertoire .git/hooks de votre dépôt. Pour les activer, vous devrez les renommer (en retirant .sample par exemple) et les rendre exécutables.</li>
+            <li>Hooks courants :
+                <ul>
+                    <li>pre-commit : S'exécute avant qu'un commit soit créé. Il est couramment utilisé pour exécuter des tests ou vérifier le formatage du code.</li>
+                    <li>post-commit : S'exécute après qu'un commit a été créé.</li>
+                    <li>pre-push : S'exécute avant qu'un push soit effectué vers le dépôt distant.</li>
+                </ul>
+            </li>
+            <li></li>
+            
+        </ol>
+    
+        <h2 id="8">8. Résoudre les conflits</h2>
+        <p>
+            L'un des défis majeurs lors de l'utilisation de Git, en particulier dans un environnement collaboratif, est la gestion des conflits. Ces conflits surviennent généralement lorsque plusieurs personnes travaillent sur le même code et essaient de fusionner leurs modifications.
+        </p>
+        <h3 id="8.1">8.1. Qu'est-ce qu'un conflit?</h3>             
+
+        <p>
+            Un conflit se produit lorsque deux branches modifient le même morceau de code et que Git ne sait pas comment combiner ces modifications. Git marquera le fichier comme étant en conflit et il vous incombera de le résoudre.
+        </p>
+        
+        <h3 id="8.2">8.2. Identifier un conflit</h3>  
+        
+        <p>
+            Lorsque vous essayez de fusionner deux branches et qu'un conflit se produit, Git vous avertira via la ligne de commande :
+        </p>
+
+        <div class="commande">
+            CONFLICT (content): Merge conflict in [nom-du-fichier] <br>
+            Automatic merge failed; fix conflicts and then commit the result.
+
+        </div>
+
+        <p>
+            Dans le fichier en conflit, Git ajoutera des marqueurs pour aider à identifier la zone problématique :
+        </p>
+
+        <div class="commande">
+            &lt&lt&lt&lt&lt&lt&lt HEAD <br>
+[Votre code original] <br>
+======= <br>
+[Code modifié provenant de l'autre branche] <br>
+&gt&gt&gt&gt&gt&gt [hash-du-commit] <br>
+
+        </div>
+        <h3 id="8.3">8.3. Résolution manuelle des conflits</h3>
+
+        <ol>
+            <li>Ouvrez le fichier en conflit : Utilisez votre éditeur de code pour ouvrir le fichier présentant le conflit.</li>
+            <li>Localisez les marqueurs de conflit : Recherchez les sections du fichier délimitées par &lt&lt&lt&lt&lt&lt&lt, =======, et &gt&gt&gt&gt&gt&gt.</li>
+            <li>Décidez de la modification à conserver : Supprimez les marqueurs de conflit et choisissez entre votre modification, la modification de l'autre branche, ou combinez les deux selon ce qui est logique pour votre projet.</li>
+            <li>Testez vos modifications : Assurez-vous que le code fonctionne comme prévu et qu'il ne casse rien d'autre.</li>
+            <li>Committez les changements : Une fois que vous avez résolu tous les conflits, ajoutez les fichiers modifiés avec git add et créez un nouveau commit.</li>
+        </ol>
+
+        <h3 id="8.4">8.4. Outils de résolution de conflits</h3>
+
+        <p>
+            Il existe plusieurs outils graphiques qui peuvent aider à résoudre les conflits. Certains éditeurs de code et environnements de développement intégrés (IDE) possèdent des résolveurs de conflits intégrés. Parmi les outils populaires, on trouve :
+        </p>
+
+        <ul>
+            <li>Visual Studio Code : Il a une excellente intégration de Git et fournit une interface visuelle pour résoudre les conflits.</li>
+            <li>KDiff3, Meld, Beyond Compare : Des outils spécifiquement conçus pour comparer et fusionner des fichiers.</li>
+        </ul>
+         
+    
+        <h2 id="9">9. Outils annexes et intégrations</h2>
+         
+    <p>
+        La puissance de Git et GitHub ne se limite pas à la ligne de commande. Il existe une pléthore d'outils et d'intégrations qui renforcent et simplifient votre expérience avec ces systèmes.
+    </p>
+
+        <h3 id="9.1">9.1. GUI pour Git</h3>
+
+        <p>
+            Bien que la ligne de commande soit un moyen puissant d'interagir avec Git, beaucoup préfèrent une interface graphique pour visualiser et gérer leurs dépôts.
+        </p>
+         <ol>
+            <li>GitHub Desktop : Une interface simple et directe développée par GitHub. Elle offre des fonctionnalités de base, comme le commit, le push, et le pull, et intègre également un historique visuel des commits.</li>
+            <li>SourceTree : Développé par Atlassian, cet outil offre une interface riche pour gérer vos dépôts. Il prend en charge plusieurs dépôts et a une intégration solide avec Bitbucket en plus de GitHub.</li>
+            <li>TortoiseGit : C'est une extension pour Windows qui intègre Git dans l'explorateur de fichiers, permettant des opérations directement depuis le contexte des dossiers et fichiers.</li>
+         </ol>
+    
+        <h3 id="9.2">9.2. Intégration avec des IDE</h3>
+
+        <p>
+            Les environnements de développement intégrés (IDE) modernes viennent souvent avec une intégration Git. Cette intégration facilite le suivi des changements, la gestion des branches, et l'exécution des commandes Git sans quitter l'IDE.
+        </p>
+
+            <ol>
+                <li>Visual Studio Code (VSCode) : Avec son extension Git intégrée, VSCode permet de voir les changements, de gérer les branches, et d'exécuter la plupart des commandes Git directement depuis l'éditeur.</li>
+                <li>IntelliJ IDEA : Cet IDE propose une intégration Git riche, avec un historique visuel, une résolution de conflits graphique, et une prise en charge de multiples dépôts.</li>
+                <li>Eclipse : Via le plugin EGit, Eclipse offre une intégration complète avec Git, incluant un historique, une gestion des branches, et bien plus.</li>
+            </ol>
+        <h3 id="9.3">9.3. CI/CD avec GitHub Actions</h3>
+         
+             
+       <p>
+        L'intégration continue (CI) et la livraison continue (CD) sont devenues des éléments centraux du développement moderne. GitHub Actions offre une manière puissante d'automatiser ces processus.
+       </p>
+    
+        <ol>
+            <li>Configuration : Les workflows sont définis dans des fichiers .yml situés dans le répertoire .github/workflows de votre dépôt.</li>
+            <li>Déclencheurs : Les workflows peuvent être déclenchés par une variété d'événements, tels que des push, des pull requests ou des releases.</li>
+            <li>Jobs et étapes : Les workflows sont composés de jobs, et chaque job a des étapes. Ces étapes peuvent inclure des commandes comme l'exécution de tests, la construction d'artefacts, ou le déploiement vers des serveurs.</li>
+            <li>Matrices de build : Vous pouvez définir des matrices pour exécuter des jobs sur plusieurs versions d'un langage ou sur différents systèmes d'exploitation.</li>
+            <li>Stockage d'artefacts et journaux : Après l'exécution d'un workflow, GitHub Actions permet de stocker des fichiers résultants (comme des binaires) et fournit des logs détaillés de chaque étape.</li>
+        </ol>
+
+        <h2 id="10">10. Conclusion</h2>
+
+        <p>Au fil de ce cours, nous avons exploré les nombreuses facettes de Git et GitHub. De ses origines historiques à sa puissante intégration avec d'autres outils, Git est devenu l'outil incontournable de versioning pour les développeurs du monde entier.</p>
+        <p>Git n'est pas seulement un outil pour suivre les modifications de code. C'est une philosophie de collaboration, permettant aux équipes de travailler ensemble de manière transparente, de gérer les conflits et de construire des logiciels robustes.</p>
+        <p>L'importance de la pratique : Comme pour toute compétence, la maîtrise de Git nécessite de la pratique. Chaque projet, chaque conflit résolu et chaque pull request fusionnée vous rapproche d'une meilleure compréhension de cet outil puissant.</p>
+        <p>L'évolution continue : Git, tout comme le monde du développement de logiciels, est en constante évolution. Il est donc essentiel de rester à jour avec les nouvelles fonctionnalités et pratiques recommandées.</p>
+         
+    
+        <h2 id="11">11. Ressources supplémentaires</h2>
+         
+        <p>
+            Pour ceux qui souhaitent approfondir leurs connaissances ou qui ont besoin d'une aide supplémentaire, voici quelques ressources recommandées :
+        </p>
+
+        <ol>
+            <li>Documentation officielle de Git : Une source exhaustive et détaillée sur toutes les commandes et fonctionnalités de Git. <a href="https://git-scm.com/doc" target="_blank">Git Documentation</a></li>
+            <li>Pro Git Book : Un livre complet sur Git, disponible gratuitement en ligne.<a href="https://git-scm.com/book/en/v2" target="_blank">Pro Git</a></li>
+            <li>GitHub Learning Lab : Une série de tutoriels pratiques proposés par GitHub pour apprendre à utiliser la plateforme.<a href="https://lab.github.com/" target="_blank">GitHub Learning Lab</a></li>
+            <li>Git Immersion : Un tutoriel pour ceux qui préfèrent apprendre par la pratique.<a href="https://gitimmersion.com/" target="_blank">Git Immersion</a></li>
+            <li>Visualizing Git : Un outil pour visualiser comment les commandes Git affectent les dépôts.<a href="http://git-school.github.io/visualizing-git/" target="_blank">Visualizing Git</a></li>
+        </ol>
+    </div>
+    <footer>
+        <p>Informations du cours générés par Intelligence Artificiel Open Ai Chat GPT v4. </p>
+        <p>Contactez moi: Mazo.prod@gmail.com</p>
+        
+    </footer>
+</body>
+</html>

@@ -1,0 +1,106 @@
+/* Globalité de la page */
+
+*{
+    padding: 0 ;
+    margin: 0;
+    background-color: #292a2c;
+}
+
+
+
+body{
+    margin: 20px 5%;
+}
+
+
+
+
+/* sommaire */
+.sommaire{
+    margin-top: 10%;
+    padding-top: 20px;
+    margin-left: 30%;
+    margin-right: auto;
+    width:fit-content;
+
+}
+
+
+.sommaire a{
+    text-decoration: none;
+}
+
+a, p, h1, h2, h3, h4, h5, .exemple h6, ul li, dl, dt, dd, ol{
+    color:#959798;
+}
+
+
+
+/* cours */
+.cours{
+    padding-left:2%;
+    padding-top: 5px;
+    max-width: 80%;
+}
+.cours h2, .cours h3, .cours p{
+    padding-top: 5px;
+}
+.cours ul li dl dt dd{
+    padding-left: 4%;
+    list-style-type:none;
+}
+
+/* exemple */
+.exemple{
+    
+}
+
+.exemple p, pre, code, blockquote, td th, h1, .exemple h2, .exemple h3, .exemple h4, .exemple h5, h6, .exemple ul li, .exemple dl, .exemple dt, .exemple dd, .exemple ol {
+    color: rgb(89, 125, 90);
+}
+
+/* header */
+
+header{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index:100;
+}
+
+.navigation a{
+    text-decoration: none;
+    color:#959798;
+    padding: 6px 15px;
+    border-radius: 20px;
+    margin:0 10px;
+    font-weight: 600;
+    
+}
+
+
+.navigation a:hover, .navigation a.active{
+    background:#959798;
+    color:#292a2c;
+}
+
+header img {
+    float: left;
+    margin: 1rem 1rem;
+    width: 100px;
+    height: auto;
+  }
+
+
+  footer {
+    background-color: #040406;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    position: relative; /* ou 'fixed' si vous voulez qu'il soit toujours visible */
+}
