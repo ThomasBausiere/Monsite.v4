@@ -1,21 +1,62 @@
+// Fonction pour basculer l'affichage du menu déroulant
+const toggleDropdown = (dropdownMenu, action) => {
+  dropdownMenu.classList[action]('show');
+};
+
+// Fonction pour planifier la fermeture du menu déroulant
+const scheduleDropdownClose = (button, timer) => {
+  return setTimeout(() => {
+    const dropdownMenu = button.nextElementSibling;
+    toggleDropdown(dropdownMenu, 'remove');
+  }, 300);
+};
+
+// Fonction pour fermer tous les menus déroulants
+const closeAllDropdowns = () => {
+  document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+    menu.classList.remove('show');
+  });
+};
+
+// Sélectionner tous les boutons qui déclenchent les menus déroulants
 const dropdownButtons = document.querySelectorAll('.dropdown-button');
 
+// Boucle sur chaque bouton
 dropdownButtons.forEach(button => {
+  let timer; // Timer pour la fermeture programmée
+  const dropdownMenu = button.nextElementSibling; // Le menu déroulant associé au bouton
+
+  // Fonction pour annuler la fermeture programmée
+  const cancelScheduledClose = () => {
+    clearTimeout(timer);
+  };
+
+  // Fonction pour les actions communes de 'mouseout'
+  const commonMouseOutAction = () => {
+    cancelScheduledClose();
+    timer = scheduleDropdownClose(button);
+  };
+
+  // Ajouter des écouteurs d'événements pour les actions de la souris
   button.addEventListener('mouseover', () => {
-    const dropdownMenu = button.nextElementSibling;
-    dropdownMenu.classList.add('show');
+    closeAllDropdowns(); // Fermer tous les autres menus déroulants
+    cancelScheduledClose();
+    toggleDropdown(dropdownMenu, 'add'); // Ouvrir ce menu
   });
-});
 
-// Fermer le menu lorsque l'utilisateur sort de celui-ci
-dropdownButtons.forEach(button => {
-  button.addEventListener('mouseout', () => {
-    const dropdownMenu = button.nextElementSibling;
-    dropdownMenu.classList.remove('show');
-  });
+  button.addEventListener('mouseout', commonMouseOutAction); // Fermer ce menu si la souris sort
+  dropdownMenu.addEventListener('mouseover', cancelScheduledClose); // Annuler la fermeture si la souris entre
+  dropdownMenu.addEventListener('mouseout', commonMouseOutAction); // Fermer si la souris sort
 });
 
 
+
+
+// 
+
+//BODY/ MODULAIRE
+
+//
 const navButtons = document.querySelectorAll('.nav-button');
 const content = document.querySelectorAll('.content');
 
