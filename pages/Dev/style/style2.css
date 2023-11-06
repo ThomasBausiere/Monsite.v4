@@ -1,0 +1,96 @@
+*, ::before, ::after{
+    box-sizing: border-box;
+    margin:0;
+    margin:0;
+}
+
+body{
+    background-image: url(../src/img/web_02.png);
+    background-color: #0f1215;
+    background-size: cover; 
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: grid;
+    grid-template-columns:30% 40% 30% ;
+    grid-template-rows:30% 40% 30% ;
+}
+
+main{
+    color: white;
+    grid-row: 2;
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: 20% 70% 10%;
+    grid-template-rows: 20% 50% 30%;
+    background-color: rgba(15, 18, 21, 0.8);
+    border-radius: 20px;
+    border: 5px solid white
+}
+
+main > img{
+    grid-row:1 ;
+    grid-column:1 ;
+    width: 200px;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    border: 5px solid white
+}
+
+main > h1{
+    text-align: center;
+    grid-column: 2;
+    padding-top: 10px;
+    font-size: 1.4em;
+
+}
+
+main > p{
+    grid-row:2 ;
+    grid-column:2 ;
+    text-align: justify;
+}
+
+.contact{
+    grid-row: 3;
+    grid-column: 3;
+    background-color: rgba(15, 18, 21);
+    transform: translate(-25%, 0%);
+    width:200px;
+    aspect-ratio: 1/1;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    border: 5px solid white
+}
+.contact > div{
+    width: 80%;
+    border:2px solid white;
+    border-radius: 25px;
+}
+.contact a{
+    padding-top:10px;
+    padding-right:5px;
+    padding-left:5px;
+    padding-bottom:10px;
+    text-decoration: none;
+    color:white;    
+}
+
+.contact > div:hover{
+    background-color: white;
+    
+}
+
+.contact >div:hover >a{
+    color:black;
+}
+
+span{
+    font-size: 1.7em;
+    color: red;
+}
