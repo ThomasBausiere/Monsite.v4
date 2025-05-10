@@ -20,8 +20,6 @@ html{
   background-position: top;
   background-repeat: no-repeat; 
   overflow-x: hidden;
-  
-  
 
 
 }
@@ -35,8 +33,6 @@ header {
   position: relative;
   width:100%;    
   top: 0;
-     
-
   }
   
   header img.logo {
@@ -188,7 +184,7 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.1); /* Ici, le fond sera semi-transparent avec 20% d'opacité */
+    background-color: rgba(0, 0, 0, 0.1); 
     height: 70px;
     width: 100%;
   }
@@ -205,8 +201,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.2); 
-    /* border: 1px solid #fff; */
+    background-color: rgba(0, 0, 0, 0.2);
     padding: 10px 20px;
     font-size: 14px;
     cursor: pointer;
